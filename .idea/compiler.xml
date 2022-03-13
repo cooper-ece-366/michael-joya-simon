@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="server" options="-Xlint" />
+      <module name="server" options="" />
     </option>
   </component>
 </project>

@@ -40,6 +40,7 @@
 		<slf4j.version>1.7.33</slf4j.version>
 		<junit-version>4.13.1</junit-version>
 		<testng.version>7.3.0</testng.version>
+		<jackson.version>2.13.1</jackson.version>
 <!--
 		<apache.commons.logging.version>1.0.4.v200706111724</apache.commons.logging.version>
 -->
@@ -242,6 +243,10 @@
 					<groupId>org.projectlombok</groupId>
 					<artifactId>lombok</artifactId>
 				</dependency>
+				<dependency>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-databind</artifactId>
+				</dependency>
 			</dependencies>
 		</profile>
 
@@ -322,6 +327,10 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
 <!--
 			<dependency>
 				<groupId>edu.cooper.ece366</groupId>
@@ -385,6 +394,11 @@
 				<groupId>com.google.code.gson</groupId>
 				<artifactId>gson</artifactId>
 				<version>${gson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
 			</dependency>
         </dependencies>
 
