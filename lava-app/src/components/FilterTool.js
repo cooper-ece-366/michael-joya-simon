@@ -5,16 +5,14 @@ import MultiSelect from  'react-multiple-select-dropdown-lite'
 import  'react-multiple-select-dropdown-lite/dist/index.css'
 
 function Filter() {
-        
+    
+    //Filter fields for now
     const [formData, setFormData] = useState({
         name: "",
         ageLower: 18,
         ageUpper: 100,
         skillset: [],
     })
-
-    //Only Want friend button to be hit once
-    const [disabled, setDisabled] = useState(false);
 
     //Will be replaced by MySQL Query Data
     const sampleData = [
@@ -32,7 +30,7 @@ function Filter() {
         },
     ]
         
-
+    //Add options for all possible skills
     const  options  = [
         { label:  'Chemistry', value:  'Chemistry'  },
         { label:  'Biology', value:  'Biology'  },
@@ -42,11 +40,13 @@ function Filter() {
         //Add to here for list of skills available to be filtered from
       ]
 
+    //Function to make multiple skillsets into an array
     const  handleOnChange  =  val  => {
         var namesArr = val.split(",")
         setFormData({...formData, skillset: namesArr})
     }
 
+    //Function that will be used for get requests
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
@@ -89,7 +89,7 @@ function Filter() {
                 <div className = "card" key = {val.id}>
                     <h2>{val.name}</h2>
                     <p>{val.age} Years Old</p>
-                    <div>Skills: {val.skills.map(skill => <p id = "{skill}" className = "ind-skill">{skill}</p>)}</div><br/>
+                    <div>Skills: {val.skills.map(skill => <p id = {skill} className = "ind-skill">{skill}</p>)}</div><br/>
                     <button onClick = {testButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button>
                 </div>
                 )})}

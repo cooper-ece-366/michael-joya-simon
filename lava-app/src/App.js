@@ -2,14 +2,17 @@ import './App.css';
 import React, { useState } from "react"
 import Filter from './components/FilterTool';
 
+//Temporary rest API url
 const apiUrlPrefix = "http://localhost:8080/api/user";
 
 
 function App() {
 
+  //UseState declarations
   const [name, setName] = useState("No Name Provided");
   const[id, setId] = useState("No ID Provided")
 
+  //Function for sample get request
   function updateNameId() {
     fetch(apiUrlPrefix)
       .then(response => response.json())
@@ -28,7 +31,6 @@ function App() {
     <div className="App">
       <Filter/>
 
-      
       <button onClick={updateNameId}>
         Click me!
       </button><br/>
