@@ -21,7 +21,7 @@ function App() {
       .catch(err => {
         console.log("Cannot connect to API endpoint: %s", apiUrlPrefix);
       });
-    console.log("Refreshed quote.");  
+    console.log("Success");  
   }
 
   return (
