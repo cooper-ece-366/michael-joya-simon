@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from "react"
 import Filter from './components/FilterTool';
+import FriendPage from './components/FriendPage';
 
 //Temporary rest API url
 const apiUrlPrefix = "http://localhost:8080/api/user";
@@ -29,16 +30,19 @@ function App() {
 
   return (
     <div className="App">
+      <FriendPage/>
+      {/*
       <Filter/>
+      
 
       <button onClick={updateNameId}>
         Click me!
       </button><br/>
       <span>{id}</span><br/>
       <span>{name}</span>
-      
+      */}
     </div>
-    
+
   );
 }
 
