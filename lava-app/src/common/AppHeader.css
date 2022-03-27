@@ -8,6 +8,7 @@
     line-height: 60px;
     vertical-align: middle;
     font-size: 1.35em;
+    color: orange;
 }
 
 .app-branding {
@@ -39,9 +40,9 @@
 }
 
 .app-nav ul li a:hover {
-    color: #0f96f6;
+    color: orange;
 }
 
 .app-nav ul li a.active {
-    color: #0f96f6;
+    color: orange;
 }
