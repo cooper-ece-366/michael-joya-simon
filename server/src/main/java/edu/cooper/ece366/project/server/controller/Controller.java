@@ -1,7 +1,8 @@
-package edu.cooper.ece366.project.server;
+package edu.cooper.ece366.project.server.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.cooper.ece366.project.server.TestUser;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
