@@ -15,7 +15,7 @@ const filler = [
   }
 ];
 
-class Complete extends Component {
+class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = { data: null };
@@ -93,4 +93,4 @@ class Complete extends Component {
   }
 }
 
-export default Complete;
+export default Filter;
