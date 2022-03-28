@@ -1,101 +1,96 @@
-import React from 'react';
+import { Icon, Input, AutoComplete, Button, Row, Col } from "antd";
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import Search from "antd/lib/transfer/search";
+import API from './api.js';
 import './FilterTool.css';
-import { useState } from "react";
-import MultiSelect from  'react-multiple-select-dropdown-lite'
-import  'react-multiple-select-dropdown-lite/dist/index.css'
 
-function Filter() {
-    
-    //Filter fields for now
-    const [formData, setFormData] = useState({
-        name: "",
-        ageLower: 18,
-        ageUpper: 100,
-        skillset: [],
-    })
+const Option = AutoComplete.Option;
+const OptGroup = AutoComplete.OptGroup;
 
-    //Will be replaced by MySQL Query Data
-    const sampleData = [
-        {
-          id: 1,
-          name: "Megan Bordar",
-          age: 20,
-          skills: ["Chemistry", "Biology"]   
-        },
-        {
-            id: 2,
-            name: "John Smith",
-            age: 31,
-            skills: ["Physics"]   
-        },
-    ]
-        
-    //Add options for all possible skills
-    const  options  = [
-        { label:  'Chemistry', value:  'Chemistry'  },
-        { label:  'Biology', value:  'Biology'  },
-        { label:  'Physics', value:  'Physics'  },
-        { label:  'Environmental', value:  'Environmental'  },
+const filler = [
+  {
+    id: "", 
+    name: "Pending Requests"
+  }
+];
 
-        //Add to here for list of skills available to be filtered from
-      ]
+class Filter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { data: null };
+    this.updateData = this.updateData.bind(this);
+    this.addFriend = this.addFriend.bind(this);
+  }
 
-    //Function to make multiple skillsets into an array
-    const  handleOnChange  =  val  => {
-        var namesArr = val.split(",")
-        setFormData({...formData, skillset: namesArr})
+  async addFriend(id) {
+    const data = await API.get("addFriend/" + id.toString());
+  }
+
+  async updateData(value) {
+    if (value == "") {
+      return;
     }
+    const data = await API.get("getUser/" + value.toString());
+    this.setState({ data: data.data.payload.value });
+  }
 
-    //Function that will be used for get requests
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(formData)
-        //Make Get Requests from here with formData Info
-    }
+  render() {
+    const { data } = this.state;
+    const options =
+      data != null
+        ? data.map(opt => (
+            <Option key={opt.id} value={opt.id}>
+              <Row>
+                <Col span={6} push={18}>
+                  {opt.friendCheck ? null : (
+                    <Button
+                      icon="plus"
+                      style={{ width: "100%", marginTop: "16px" }}
+                      onClick={() => this.addFriend(opt.id)}
+                    />
+                  )}
+                </Col>
+                <NavLink
+                  to={{
+                    pathname: "/profile/" + opt.username,
+                    aboutProps: { friendCheck: opt.friendCheck }
+                  }}
+                >
+                  <Col span={18} pull={6}>
+                    <h4>{opt.name}</h4>
+                    <p>{opt.username}</p>
+                  </Col>
+                </NavLink>
+              </Row>
+            </Option>
+          ))
+        : filler.map(opt => (
+            <Option key={opt.id} value={opt.id}>
+              {opt.name}
+            </Option>
+          ));
+    return (
+      <div className="certain-category-search-wrapper" style={{ width: 250 }}>
+        <AutoComplete
+          className="certain-category-search"
+          dropdownClassName="certain-category-search-dropdown"
+          dropdownMatchSelectWidth={false}
+          dropdownStyle={{ width: 250 }}
+          size="large"
+          style={{ width: "200px" }}
+          dataSource={options}
+          placeholder="Filtering Tool"
+          optionLabelProp="value"
+          onChange={value => this.updateData(value)}
+        >
+          <Input
+            suffix={<Icon type="search" className="certain-category-icon" />}
+          />
+        </AutoComplete>
+      </div>
+    );
+  }
+}
 
-    //Send Friend Request here given the id of the individual
-    const testButton = (e) => {
-        var SendRequestID = e.target.id
-        console.log(SendRequestID)
-    }
-
-        return (
-        <div className = "filter-total">
-            <br/><br/><br/>
-            <div className = "form-total">
-            <h1 className = "head">Find Study Buddies</h1>
-                <form>
-                    <div className = "form-box">
-                        <label htmlFor="name" className = "subtitle" >Name</label>
-                        <input placeholder= "John Smith" onChange = {(e) => setFormData({...formData, name: e.target.value})} value={formData.name} type="text" name="name" id="name" />
-
-                        <label htmlFor="ageLow" className = "subtitle" >Age Range</label>
-                        <input onChange = {(e) => setFormData({...formData, ageLower: e.target.valueAsNumber || 0})} value={formData.ageLower} min = '18' type="number" name="ageLower" id="ageLower" />
-                        <input onChange = {(e) => setFormData({...formData, ageUpper: e.target.valueAsNumber || 0})} value={formData.ageUpper} min = '18' type="number" name="ageUpper" id="ageUpper" />
-
-                        <label htmlFor="skillset" className = "subtitle" >Skillset</label>
-                        <MultiSelect className = "multi-sel"
-                            onChange={handleOnChange}
-                            options={options}
-                        />
-                    </div><br/><br/>
-                    <button onClick={handleSubmit} type="submit" className = "sub-button">
-                        Submit
-                    </button>
-                </form>
-            </div >
-            <div className = "all-card">{sampleData.map((val) => {
-                return (
-                <div className = "card" key = {val.id}>
-                    <h2>{val.name}</h2>
-                    <p>{val.age} Years Old</p>
-                    <div>Skills: {val.skills.map(skill => <p id = {skill} className = "ind-skill">{skill}</p>)}</div><br/>
-                    <button onClick = {testButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button>
-                </div>
-                )})}
-            </div>
-        </div>
-        );
- }
-  
 export default Filter;
