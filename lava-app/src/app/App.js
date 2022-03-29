@@ -10,6 +10,7 @@ import Signup from '../user/signup/Signup';
 import Profile from '../user/profile/Profile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
 import Filter from '../components/FilterTool';
+import Friends from '../components/Friends';
 import NotFound from '../common/NotFound';
 import LoadingIndicator from '../common/LoadingIndicator';
 import { getCurrentUser } from '../util/APIUtils';
@@ -78,6 +79,8 @@ class App extends Component {
               component={Profile}></PrivateRoute>
             <PrivateRoute path="/find" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Filter}></PrivateRoute>
+            <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+              component={Friends}></PrivateRoute>
             <Route path="/login"
               render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/signup"
