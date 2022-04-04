@@ -56,7 +56,7 @@
 }
 
 .input-Date {
-    width: 300px;
+    width: 250px;
     padding: 12px;
     border-radius: 5px;
     border: solid 2px black;
@@ -76,14 +76,14 @@
     padding: 12px;
     border-radius: 5px;
     border: solid 2px black;
-    width: 300px;
+    width: 250px;
 }
 
 .career-input {
     padding: 12px;
     border-radius: 5px;
     border: solid 2px black;
-    width: 300px;
+    width: 250px;
 }
 
 .select {
@@ -115,7 +115,7 @@
 .select-state {
     border-radius: 5px;
     border: solid 2px black;
-    width: 300px;
+    width: 250px;
     flex: right;
 }
 
