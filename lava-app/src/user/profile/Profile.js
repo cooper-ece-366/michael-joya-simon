@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Profile.css';
+import EditProfile from '../../components/EditProfile';
+import { Link, NavLink } from 'react-router-dom';
 
 class Profile extends Component {
     constructor(props) {
@@ -26,8 +28,13 @@ class Profile extends Component {
                            <h2>{this.props.currentUser.name}</h2>
                            <p className="profile-email">{this.props.currentUser.email}</p>
                         </div>
+                        <button className = "edit-button">
+                            <NavLink to="/editProfile" className = "edit-words">Edit</NavLink>
+                        </button>
                     </div>
-                </div>    
+                    
+                </div>  
+                
             </div>
         );
     }
