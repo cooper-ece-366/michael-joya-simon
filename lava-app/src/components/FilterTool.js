@@ -75,10 +75,10 @@ class Filter extends Component {
           var SendRequestID = e.target.id
           console.log(SendRequestID)
           if (SendRequestID == 1) { 
-            Alert.success("You have sent a friend request to Megan Bordar")
+            Alert.success("You have sent a friend request to Megan Bordar!") //change to target.name
           }
           if (SendRequestID == 2) { 
-            Alert.success("You have sent a friend request to John Smith")
+            Alert.success("You have sent a friend request to John Smith!")
           }
           
     }
@@ -91,7 +91,7 @@ class Filter extends Component {
             <div className = "form-box">
                 <label htmlFor="name" className = "subtitle" >Name </label>
                 <div>&nbsp;</div>
-                <input placeholder= "John Smith" onChange = {this.handleOnChange} type="text" name="name" id="name" />
+                <input placeholder= "First Last" onChange = {this.handleOnChange} type="text" name="name" id="name" />
                 <br/><br/>
                 <label htmlFor="age" className = "subtitle" >Age Range </label>
                 <div>&nbsp;</div>
@@ -102,6 +102,7 @@ class Filter extends Component {
                 <input value = {this.state.ageUpper} onChange = {e => this.setState({ageUpper: e.target.value.replace(/\D/,'')})} min = '18' type="text" pattern = "[0-9]*" name="ageUpper" id="ageUpper" />
                 <br/><br/>
                 <label htmlFor="skillset" className = "subtitle" >Skillset</label>
+                <div>&nbsp;</div>
                 <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills}/></div>
             </div><br/><br/>
             <button onClick={this.handleSubmit} type="submit" className = "sub-button">
