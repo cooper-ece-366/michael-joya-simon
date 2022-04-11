@@ -1,0 +1,28 @@
+.imagebox{
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.image{
+    width:80px;
+    border-radius: 50%;
+    background-color: white;
+}
+.friend{
+    display:flex;
+}
+.friend:hover{
+    background-color: darkgray;
+}
+
+.imagetext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagetext h2{
+    margin: 0px;
+}
+.name{
+    text-transform: capitalize;
+}
