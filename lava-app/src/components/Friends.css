@@ -1,8 +1,21 @@
-.friendcontainer{
+/* how do i make the columns have space in between them?*/
+
+.column{
+    float: left;
     background-color: #eaebee;
-    padding: 0px;
+    padding: 10px;
     margin:50px auto;
-    width: 650px;
+    width: 600px;
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row{
+    padding: 25px 50px 75px 100px;
 }
