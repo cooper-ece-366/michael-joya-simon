@@ -19,3 +19,28 @@
 .row{
     padding: 25px 50px 75px 100px;
 }
+.dropdown{
+    display:flex;
+    padding-bottom: 13px;
+}
+/* Dropdown Button */
+.dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    font-weight:bold;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.dropbtn:hover{
+   background-color: darkgray;
+}
+
+.dropbtn.active{
+    background-color:orange;
+}
+
+
