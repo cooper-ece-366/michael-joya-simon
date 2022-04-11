@@ -5,6 +5,8 @@ import FriendList from './FriendList';
 import frienddata from "./frienddata";
 import RequestList from './requestlist';
 import requestdata from "./requestdata";
+import sentdata from "./sentdata";
+import SentList from "./SentList";
 
 
 
@@ -12,7 +14,7 @@ class Friends extends Component {
     constructor(props){
         super(props);
         this.state = {
-            frienddata, requestdata,
+            frienddata, requestdata, sentdata, isRequests: true,
         };
     }
     render() {
@@ -29,8 +31,9 @@ class Friends extends Component {
 
                         </div>
                     </div>
+                    {this.state.isRequests ?
                     <div class="column">
-                        <h1 className= "Requests">
+                        <h1 class= "Requests">
                             Requests
                         </h1>
                         <div>
@@ -39,7 +42,18 @@ class Friends extends Component {
                             })}
                         </div>
 
-                    </div>
+                    </div>:
+                    <div className="column">
+                        <h1 className="Sent">
+                            Sent
+                        </h1>
+                        <div>
+                            {this.state.sentdata.map((item) => {
+                                return (<SentList {...item} key={item.id}/>)
+                            })}
+                        </div>
+
+                    </div>}
                 </div>
         )
     }
