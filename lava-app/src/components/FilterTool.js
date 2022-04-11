@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './FilterTool.css';
-// import MultiSelect from  'react-multiple-select-dropdown-lite'
-// import 'react-multiple-select-dropdown-lite/dist/index.css'
+import Select from 'react-select';
+import {options, stateNames} from '../constants/skillsList'
+import Alert from 'react-s-alert';
 
 class Filter extends Component {
   constructor(props) {
@@ -12,10 +13,12 @@ class Filter extends Component {
       ageUpper: 100,
       skillset: ""
     }
+
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.testButton = this.testButton.bind(this); 
-    this.handleOnChangeSelector = this.handleOnChangeSelector.bind(this)
+    this.handleOnChangeSelector = this.handleOnChangeSelector.bind(this);
+    this.changeHandlerSkills = this.changeHandlerSkills.bind(this);
     }
     
     sampleData = [
@@ -59,10 +62,25 @@ class Filter extends Component {
         e.preventDefault()
         console.log(this.state)
     }
-    
+
+    changeHandlerSkills = (selectedOptions) =>  {
+        let result = selectedOptions.map(a => a.value);
+        this.setState(
+            {
+                skills: result
+            }
+        );
+    }
     testButton(e) {
           var SendRequestID = e.target.id
           console.log(SendRequestID)
+          if (SendRequestID == 1) { 
+            Alert.success("You have sent a friend request to Megan Bordar")
+          }
+          if (SendRequestID == 2) { 
+            Alert.success("You have sent a friend request to John Smith")
+          }
+          
     }
   render() { 
     return(<div className = "filter-total">
@@ -84,10 +102,7 @@ class Filter extends Component {
                 <input value = {this.state.ageUpper} onChange = {e => this.setState({ageUpper: e.target.value.replace(/\D/,'')})} min = '18' type="text" pattern = "[0-9]*" name="ageUpper" id="ageUpper" />
                 <br/><br/>
                 <label htmlFor="skillset" className = "subtitle" >Skillset</label>
-                {/*<MultiSelect className = "multi-sel"
-                    options={this.options}
-                    onChange = {this.handleOnChangeSelector}
-                />*/}
+                <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills}/></div>
             </div><br/><br/>
             <button onClick={this.handleSubmit} type="submit" className = "sub-button">
                 Submit

@@ -27,7 +27,10 @@
     top: -300px;
     right: -300px;
 }
-
+.select{ 
+    width: 15%;
+    margin: auto;
+}
 .card { 
     border: 2px solid #FFA500;
 }
