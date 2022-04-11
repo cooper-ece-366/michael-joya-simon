@@ -58,10 +58,4 @@ class Friends extends Component {
         )
     }
 }
-
 export default Friends;
-
-
-//make open boolean in state
-//apply that to div title to change when clicked
-//make so div data shown only shjown when open boolen true
