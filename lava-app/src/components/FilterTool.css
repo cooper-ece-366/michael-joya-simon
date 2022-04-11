@@ -14,6 +14,11 @@
     text-align: center;
     border: 2px solid #FFA500;
 }
+
+.sub-button:hover { 
+        background-color: darkgray;
+}
+
 .suggested {
     color: orange; 
     text-align: center;
