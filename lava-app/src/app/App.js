@@ -8,6 +8,7 @@ import Home from '../home/Home';
 import Login from '../user/login/Login';
 import Signup from '../user/signup/Signup';
 import Profile from '../user/profile/Profile';
+import EditProfile from '../components/EditProfile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
 import Filter from '../components/FilterTool';
 import Friends from '../components/Friends';
@@ -59,6 +60,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+    window.onload = function() {
+      if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+      }
+    }
     this.loadCurrentlyLoggedInUser();
   }
 
@@ -79,6 +86,8 @@ class App extends Component {
               component={Profile}></PrivateRoute>
             <PrivateRoute path="/find" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Filter}></PrivateRoute>
+            <PrivateRoute path="/editProfile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+              component={EditProfile}></PrivateRoute>
             <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Friends}></PrivateRoute>
             <Route path="/login"

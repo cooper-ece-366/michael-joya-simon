@@ -1,11 +1,33 @@
-.certain-category-search {
-    background-color: white; 
-    text-indent: 50px;
+.head { 
+    color : orange;
+    text-align: center;
 }
-.certain-category-icon { 
-    text-align: end;
+.form-total { 
+    position: relative;
+    text-align: center;
+}
+.form-box{ 
+    color: black; 
 }
 
-.certain-category-search-dropdown { 
-    text-align: right;
+.sub-button { 
+    text-align: center;
+    border: 2px solid #FFA500;
+}
+.suggested {
+    color: orange; 
+    text-align: center;
+}
+.all-card {
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 250px;
+    height: 500px;
+    top: -300px;
+    right: -300px;
+}
+
+.card { 
+    border: 2px solid #FFA500;
 }
