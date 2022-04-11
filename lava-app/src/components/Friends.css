@@ -1,0 +1,46 @@
+/* how do i make the columns have space in between them?*/
+
+.column{
+    float: left;
+    background-color: #eaebee;
+    padding: 10px;
+    margin:50px auto;
+    width: 600px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row{
+    padding: 25px 50px 75px 100px;
+}
+.dropdown{
+    display:flex;
+    padding-bottom: 13px;
+}
+/* Dropdown Button */
+.dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    font-weight:bold;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.dropbtn:hover{
+   background-color: darkgray;
+}
+
+.dropbtn.active{
+    background-color:orange;
+}
+
+
