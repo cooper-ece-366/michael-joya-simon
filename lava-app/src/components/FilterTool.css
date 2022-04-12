@@ -14,6 +14,11 @@
     text-align: center;
     border: 2px solid #FFA500;
 }
+
+#select-inner {
+    width: 100%;
+}
+
 .suggested {
     color: orange; 
     text-align: center;
@@ -28,7 +33,7 @@
     right: -300px;
 }
 .select{ 
-    width: 15%;
+    width: 100%;
     margin: auto;
 }
 .card { 
