@@ -7,27 +7,37 @@ import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
+import { updateCurrentUser } from '../util/APIUtils';
 
 //Michael Bentivegna
-
-let states = []
+        let states = []
+        let skillsArray = []
+        let skillsDefault = []
 
 class EditProfile extends Component {
     constructor(props) {
         super(props);
-        
+        states = []
+        skillsArray = []
+        skillsDefault = []
         
         stateNames.forEach(function(element) {  
         states.push({ label:element, value: element })})
-        //Change these to an API get request of traits from current user at the start (like how its done with name)
+
         this.state = {
             name: this.props.currentUser.name,
-            birthday: "2000-01-01",
-            skills: '', 
-            bio: '',
-            state: '',
-            career: '',
+            birthday: this.props.currentUser.birthday,
+            skillsList: this.props.currentUser.skillsList, 
+            bio: this.props.currentUser.bio,
+            stateLocated: this.props.currentUser.stateLocated,
+            career: this.props.currentUser.career,
         }
+
+        skillsArray = this.props.currentUser.skillsList.split(",")
+        skillsArray.forEach(function(element) {
+            skillsDefault.push({label: element, value: element.toLowerCase()})
+        })
+        
 
         this.changeHandler = this.changeHandler.bind(this);
         this.changeHandlerBirthday = this.changeHandlerBirthday.bind(this);
@@ -35,6 +45,8 @@ class EditProfile extends Component {
         this.changeHandlerState = this.changeHandlerState.bind(this);
         this.submit = this.submit.bind(this);
     }
+
+    
 
     //Change handler for regular inputs
     changeHandler(event) {
@@ -57,10 +69,10 @@ class EditProfile extends Component {
 
     //Change handler for skills multiselect
     changeHandlerSkills(selectedOptions) {
-        let result = selectedOptions.map(a => a.value);
+        let result = selectedOptions.map(a => a.label).toString()
         this.setState(
             {
-                skills: result
+                skillsList: result
             }
         );
     }
@@ -69,7 +81,7 @@ class EditProfile extends Component {
         let result = selectedOption.value;
         this.setState(
             {
-                state: result
+                stateLocated: result
             }
         );
     }
@@ -78,8 +90,10 @@ class EditProfile extends Component {
     submit() {
         console.log(this.state)
         //Make UPDATE request for Profile here
-
+        const updateProfile = Object.assign({}, this.state);
+        console.log(updateCurrentUser(updateProfile))
         Alert.success("You're changes have been saved!");
+        window.location.reload();
         
     }
     
@@ -121,18 +135,20 @@ class EditProfile extends Component {
                         </div>
 
                         <div className = "field-small"><h3>State Located:</h3>
-                            <div className = "select-state"><Select options={states} onChange = {this.changeHandlerState}/></div>
+                            <div className = "select-state"><Select options={states} onChange = {this.changeHandlerState} defaultValue = {{label: this.state.stateLocated, value: this.state.stateLocated}}/></div>
                         </div> 
                     </div>
 
                     <div className = "field"><h3>Skills:</h3>
-                        <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills}/></div>
+                        <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
                     </div> 
 
                     <div className = "field"><h3>Biography:</h3>
                         <textarea className = "textareas"
                             name="bio"  
-                            onChange={this.changeHandler} >
+                            onChange={this.changeHandler}
+                            value={this.state.bio} >
+                            
                         </textarea>
 
                     </div>
@@ -143,6 +159,12 @@ class EditProfile extends Component {
                         </button>
                     </div>
                 </div>
+                {this.state.name}<br/>
+                {this.state.birthday}<br/>
+                {this.state.career}<br/>
+                {this.state.bio}<br/>
+                {this.state.stateLocated}<br/>
+                {this.state.skillsList}<br/>
             </div>
         )
     }
