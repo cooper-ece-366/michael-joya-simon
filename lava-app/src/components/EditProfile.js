@@ -37,6 +37,11 @@ class EditProfile extends Component {
         skillsArray.forEach(function(element) {
             skillsDefault.push({label: element, value: element.toLowerCase()})
         })
+
+        if(this.props.currentUser.birthday == "")
+        {
+            this.state.birthday = "01-01-1900"
+        }
         
 
         this.changeHandler = this.changeHandler.bind(this);
@@ -44,6 +49,7 @@ class EditProfile extends Component {
         this.changeHandlerSkills = this.changeHandlerSkills.bind(this);
         this.changeHandlerState = this.changeHandlerState.bind(this);
         this.submit = this.submit.bind(this);
+        this.sleep = this.sleep.bind(this);
     }
 
     
@@ -62,7 +68,7 @@ class EditProfile extends Component {
     changeHandlerBirthday(date) {
         this.setState(
             {
-                birthday: date.format("yyyy-MM-DD")
+                birthday: date.format("MM-DD-yyyy")
             }
         );
     }
@@ -86,16 +92,25 @@ class EditProfile extends Component {
         );
     }
 
+    sleep(duration) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve()
+            }, duration * 1000)
+        })
+    }
+
     //Submit button with alert
-    submit() {
-        console.log(this.state)
+    async submit() {
         //Make UPDATE request for Profile here
         const updateProfile = Object.assign({}, this.state);
         console.log(updateCurrentUser(updateProfile))
         Alert.success("You're changes have been saved!");
+        await this.sleep(1);
         window.location.reload();
-        
     }
+
+    
     
     render() {
         return (
@@ -140,7 +155,7 @@ class EditProfile extends Component {
                     </div>
 
                     <div className = "field"><h3>Skills:</h3>
-                        <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
+                        <div className = "select"><Select id = "select-inner" options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
                     </div> 
 
                     <div className = "field"><h3>Biography:</h3>
@@ -159,12 +174,7 @@ class EditProfile extends Component {
                         </button>
                     </div>
                 </div>
-                {this.state.name}<br/>
-                {this.state.birthday}<br/>
-                {this.state.career}<br/>
-                {this.state.bio}<br/>
-                {this.state.stateLocated}<br/>
-                {this.state.skillsList}<br/>
+                
             </div>
         )
     }
