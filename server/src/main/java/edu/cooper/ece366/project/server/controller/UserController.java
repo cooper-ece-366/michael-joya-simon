@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -44,9 +45,23 @@ public class UserController {
         updateUser.setName(inputUser.getName());
 
         User user = userRepository.save(updateUser);
-
         return updateUser;
+    }
 
+    @PostMapping("/user/list")
+    public List<User> filterCurrentUsers(@CurrentUser UserPrincipal userPrincipal,
+                                         @Valid @RequestBody User filterUser) {
+
+        List<User> filtered = userRepository.findAll();
+        String[] skills = filterUser.getSkillsList().split("[,]", 0);;
+
+        for (int i = 0; i < skills.length; i++) {
+            int finalI = i;
+            filtered.removeIf(value -> !(value.getSkillsList().contains(skills[finalI])));
+        }
+
+
+        return filtered;
     }
 
 }
