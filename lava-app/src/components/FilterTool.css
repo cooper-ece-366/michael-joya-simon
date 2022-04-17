@@ -1,41 +1,109 @@
 .head { 
-    color : orange;
+    color : white;
     text-align: center;
+    background-color: orange;
+    margin: auto;
+    width: 40%;
+    min-width: 400px;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
+
+.filter-total {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    
+}
+
+
 .form-total { 
-    position: relative;
     text-align: center;
+    
+
 }
 .form-box{ 
     color: black; 
+    width: 40%;
+    margin: auto;
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    min-width: 400px;
+
 }
 
 .sub-button { 
     text-align: center;
-    border: 2px solid #FFA500;
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
 }
 
-.sub-button:hover { 
-        background-color: darkgray;
+.sub-button:hover {
+    cursor: pointer;
+    background-color: darkorange;
 }
 
 .suggested {
-    color: orange; 
+    color : white;
     text-align: center;
-}
-.all-card {
-    position: relative;
-    text-align: center;
-    color: black;
-    width: 250px;
-    height: 500px;
-    top: -300px;
-    right: -300px;
-}
-.select{ 
-    width: 15%;
+    background-color: orange;
     margin: auto;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
+
+.all-card {
+    text-align: left;
+    min-width: 400px;
+    color: black;
+    width: 60%;
+    
+}
+
+.subtitle-filter {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.select { 
+    margin: auto;
+    width: 80%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
 .card { 
-    border: 2px solid #FFA500;
+    background-image: linear-gradient(to bottom,  rgb(231, 231, 231), rgb(201, 201, 201));
+    padding: 20px;
+
+}
+
+.input-box-filter {
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.friend-button {
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.friend-button:hover {
+    cursor: pointer;
+}
+
+.skills-in-suggested {
+    font-style: italic;
 }

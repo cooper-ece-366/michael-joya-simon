@@ -34,6 +34,18 @@ export function getCurrentUser() {
     });
 }
 
+export function updateCurrentUser(updateProfile) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/user/update",
+        method: 'POST',
+        body: JSON.stringify(updateProfile)
+    });
+}
+
 export function login(loginRequest) {
     return request({
         url: API_BASE_URL + "/auth/login",
@@ -47,5 +59,17 @@ export function signup(signupRequest) {
         url: API_BASE_URL + "/auth/signup",
         method: 'POST',
         body: JSON.stringify(signupRequest)
+    });
+}
+
+export function getFilteredUsers(filterRequest) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/user/list",
+        method: 'POST',
+        body: JSON.stringify(filterRequest)
     });
 }

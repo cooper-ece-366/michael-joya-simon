@@ -7,34 +7,52 @@ import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
+import { updateCurrentUser } from '../util/APIUtils';
 
 //Michael Bentivegna
-
-let states = []
+        let states = []
+        let skillsArray = []
+        let skillsDefault = []
 
 class EditProfile extends Component {
     constructor(props) {
         super(props);
-        
+        states = []
+        skillsArray = []
+        skillsDefault = []
         
         stateNames.forEach(function(element) {  
         states.push({ label:element, value: element })})
-        //Change these to an API get request of traits from current user at the start (like how its done with name)
+
         this.state = {
             name: this.props.currentUser.name,
-            birthday: "2000-01-01",
-            skills: '', 
-            bio: '',
-            state: '',
-            career: '',
+            birthday: this.props.currentUser.birthday,
+            skillsList: this.props.currentUser.skillsList, 
+            bio: this.props.currentUser.bio,
+            stateLocated: this.props.currentUser.stateLocated,
+            career: this.props.currentUser.career,
         }
+
+        skillsArray = this.props.currentUser.skillsList.split(",")
+        skillsArray.forEach(function(element) {
+            skillsDefault.push({label: element, value: element.toLowerCase()})
+        })
+
+        if(this.props.currentUser.birthday == "")
+        {
+            this.state.birthday = "01-01-1900"
+        }
+        
 
         this.changeHandler = this.changeHandler.bind(this);
         this.changeHandlerBirthday = this.changeHandlerBirthday.bind(this);
         this.changeHandlerSkills = this.changeHandlerSkills.bind(this);
         this.changeHandlerState = this.changeHandlerState.bind(this);
         this.submit = this.submit.bind(this);
+        this.sleep = this.sleep.bind(this);
     }
+
+    
 
     //Change handler for regular inputs
     changeHandler(event) {
@@ -50,17 +68,17 @@ class EditProfile extends Component {
     changeHandlerBirthday(date) {
         this.setState(
             {
-                birthday: date.format("yyyy-MM-DD")
+                birthday: date.format("MM-DD-yyyy")
             }
         );
     }
 
     //Change handler for skills multiselect
     changeHandlerSkills(selectedOptions) {
-        let result = selectedOptions.map(a => a.value);
+        let result = selectedOptions.map(a => a.label).toString()
         this.setState(
             {
-                skills: result
+                skillsList: result
             }
         );
     }
@@ -69,19 +87,30 @@ class EditProfile extends Component {
         let result = selectedOption.value;
         this.setState(
             {
-                state: result
+                stateLocated: result
             }
         );
     }
 
-    //Submit button with alert
-    submit() {
-        console.log(this.state)
-        //Make UPDATE request for Profile here
-
-        Alert.success("You're changes have been saved!");
-        
+    sleep(duration) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve()
+            }, duration * 1000)
+        })
     }
+
+    //Submit button with alert
+    async submit() {
+        //Make UPDATE request for Profile here
+        const updateProfile = Object.assign({}, this.state);
+        console.log(updateCurrentUser(updateProfile))
+        Alert.success("You're changes have been saved!");
+        await this.sleep(1);
+        window.location.reload();
+    }
+
+    
     
     render() {
         return (
@@ -121,18 +150,20 @@ class EditProfile extends Component {
                         </div>
 
                         <div className = "field-small"><h3>State Located:</h3>
-                            <div className = "select-state"><Select options={states} onChange = {this.changeHandlerState}/></div>
+                            <div className = "select-state"><Select options={states} onChange = {this.changeHandlerState} defaultValue = {{label: this.state.stateLocated, value: this.state.stateLocated}}/></div>
                         </div> 
                     </div>
 
                     <div className = "field"><h3>Skills:</h3>
-                        <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills}/></div>
+                        <div className = "select-edit"><Select id = "select-inner" options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
                     </div> 
 
                     <div className = "field"><h3>Biography:</h3>
                         <textarea className = "textareas"
                             name="bio"  
-                            onChange={this.changeHandler} >
+                            onChange={this.changeHandler}
+                            value={this.state.bio} >
+                            
                         </textarea>
 
                     </div>
@@ -143,6 +174,7 @@ class EditProfile extends Component {
                         </button>
                     </div>
                 </div>
+                
             </div>
         )
     }

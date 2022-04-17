@@ -27,6 +27,21 @@ public class User {
     @Column(nullable = false)
     private Boolean emailVerified = false;
 
+    @Column(nullable = false)
+    private String skillsList = "";
+
+    @Column(nullable = false)
+    private String stateLocated = "";
+
+    @Column(nullable = false)
+    private String bio = "";
+
+    @Column(nullable = false)
+    private String birthday = "";
+
+    @Column(nullable = false)
+    private String career = "";
+
     @JsonIgnore
     private String password;
 
@@ -76,6 +91,14 @@ public class User {
         this.emailVerified = emailVerified;
     }
 
+    public String getSkillsList() {
+        return skillsList;
+    }
+
+    public void setSkillsList(String skillsList) {
+        this.skillsList = skillsList;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -98,5 +121,37 @@ public class User {
 
     public void setProviderId(String providerId) {
         this.providerId = providerId;
+    }
+
+    public String getCareer() {
+        return career;
+    }
+
+    public void setCareer(String career) {
+        this.career = career;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getStateLocated() {
+        return stateLocated;
+    }
+
+    public void setStateLocated(String stateLocated) {
+        this.stateLocated = stateLocated;
     }
 }
