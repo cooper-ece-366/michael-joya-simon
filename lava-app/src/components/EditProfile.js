@@ -155,7 +155,7 @@ class EditProfile extends Component {
                     </div>
 
                     <div className = "field"><h3>Skills:</h3>
-                        <div className = "select"><Select id = "select-inner" options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
+                        <div className = "select-edit"><Select id = "select-inner" options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
                     </div> 
 
                     <div className = "field"><h3>Biography:</h3>
