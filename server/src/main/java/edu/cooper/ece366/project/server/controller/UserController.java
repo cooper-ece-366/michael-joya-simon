@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 public class UserController {
@@ -55,11 +56,12 @@ public class UserController {
         List<User> filtered = userRepository.findAll();
         String[] skills = filterUser.getSkillsList().split("[,]", 0);;
 
+        filtered.removeIf(val -> (val.getId() == userPrincipal.getId()));
+
         for (int i = 0; i < skills.length; i++) {
             int finalI = i;
-            filtered.removeIf(value -> !(value.getSkillsList().contains(skills[finalI])));
+            filtered.removeIf(value -> (!(value.getSkillsList().contains(skills[finalI])) || !(value.getName().toLowerCase().contains(filterUser.getName().toLowerCase()))));
         }
-
 
         return filtered;
     }

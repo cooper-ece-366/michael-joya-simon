@@ -79,46 +79,52 @@ class Filter extends Component {
 
     testButton(e) {
           var SendRequestID = e.target.id
-          console.log(SendRequestID)  
+          console.log(SendRequestID)
+          Alert.success("Sent Study Buddy Request")  
     }
 
 
   render() { 
     return(<div className = "filter-total">
-    <br/><br/><br/>
     <div className = "form-total">
-    <h1 className = "head">Find Study Buddies</h1>
+    <br/><br/><br/>
+    <h2 className = "head">Find Study Buddies</h2>
         <form>
             <div className = "form-box">
-                <label htmlFor="name" className = "subtitle" >Name </label>
+                <label htmlFor="name" className = "subtitle-filter" >Name </label>
                 <div>&nbsp;</div>
-                <input placeholder= "First Last" onChange = {this.handleOnChange} type="text" name="name" id="name" />
+                <input onChange = {this.handleOnChange} type="text" name="name" id="name" className = "input-box-filter" />
                 <br/><br/>
+                {/* 
                 <label htmlFor="age" className = "subtitle" >Age Range </label>
                 <div>&nbsp;</div>
-                {/* 
-                <label htmlFor="ageLower" className = "subtitle" > </label>
+                
+                <label htmlFor="ageLower" className = "subtitle-filter" > </label>
                 <input value = {this.state.ageLower} onChange = {e => this.setState({ageLower: e.target.value.replace(/\D/,'')})} min = '18' type="text" pattern = "[0-9]*" name="ageLower" id="ageLower" /> 
                 <div>&nbsp;</div>
-                <label htmlFor= "ageUpper" className = "subtitle" > </label>
+                <label htmlFor= "ageUpper" className = "subtitle-filter" > </label>
                 <input value = {this.state.ageUpper} onChange = {e => this.setState({ageUpper: e.target.value.replace(/\D/,'')})} min = '18' type="text" pattern = "[0-9]*" name="ageUpper" id="ageUpper" />
                 <br/><br/>
                 */}
-                <label htmlFor="skillset" className = "subtitle" >Skillset</label>
+                <label htmlFor="skillset" className = "subtitle-filter" >Skillset</label>
                 <div>&nbsp;</div>
                 <div className = "select"><Select options={options} isMulti onChange = {this.changeHandlerSkills}/></div>
-            </div><br/><br/>
-            <button onClick={this.handleSubmit} type="submit" className = "sub-button">
+                <button onClick={this.handleSubmit} type="submit" className = "sub-button">
                 Submit
-            </button>
+                </button>
+            </div><br/><br/>
+            
         </form>
     </div >
     <div className = "all-card"> 
-    <h2 className = "suggested"> Suggestions Based on Your Activity</h2>{this.state.filteredUserList.map((val) => {
+    <br/><br/><br/>
+    <h2 className = "suggested"> Search Suggestions</h2>
+    {this.state.filteredUserList.map((val) => {
         return (
         <div className = "card" key = {val.id}>
+
             <h3>{val.name}</h3>
-            <div>Skills: {val.skillsList}</div>
+            <div className = "skills-in-suggested">{val.skillsList}</div>
             <button onClick = {this.testButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button> <br></br>
             <br></br></div> 
         )})}
