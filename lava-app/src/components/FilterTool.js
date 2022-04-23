@@ -4,7 +4,7 @@ import Select from 'react-select';
 import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
 import { getFilteredUsers } from '../util/APIUtils';
-
+import { API_BASE_URL } from '../constants';
 
 
 class Filter extends Component {
@@ -13,34 +13,15 @@ class Filter extends Component {
     this.state = {
       name: "",
       skillsList: "",
-      filteredUserList: []
+      filteredUserList: [],
     }
-
-   
-
     
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.testButton = this.testButton.bind(this); 
+    this.friendRequestButton = this.friendRequestButton.bind(this); 
     this.changeHandlerSkills = this.changeHandlerSkills.bind(this);
+    this.viewProfileButton = this.viewProfileButton.bind(this);
     }
-    
-    
-    sampleData = [
-          {
-            id: 1,
-            name: "Megan Bordar",
-            age: 20,
-            skills: ["Chemistry", "Biology"]   
-          },
-          {
-              id: 2,
-              name: "John Smith",
-              age: 31,
-              skills: ["Physics"]   
-          },
-      ]
-
 
     handleOnChange(e) {
        this.setState(
@@ -77,15 +58,19 @@ class Filter extends Component {
         );
     }
 
-    testButton(e) {
+    friendRequestButton(e) {
           var SendRequestID = e.target.id
           console.log(SendRequestID)
-          Alert.success("Sent Study Buddy Request")  
+          Alert.success("Sent Study Buddy Request!")  
     }
 
+    viewProfileButton(e) { 
+        console.log(e.target.id)
+    }
 
   render() { 
-    return(<div className = "filter-total">
+    return(
+    <div className = "filter-total">
     <div className = "form-total">
     <br/><br/><br/>
     <h2 className = "head">Find Study Buddies</h2>
@@ -122,10 +107,23 @@ class Filter extends Component {
     {this.state.filteredUserList.map((val) => {
         return (
         <div className = "card" key = {val.id}>
-
-            <h3>{val.name}</h3>
+             <div className ="profile-filter-img">
+                            { 
+                                val.imageUrl ? (
+                                    <img src={val.imageUrl} alt={val.name}/>
+                                ) : (
+                                    <div className="text-avatar">
+                                        <span>{val.name && val.name[0]}</span>
+                                    </div>
+                                )
+                            }
+                        </div> <div>&nbsp;</div>
+            <div classname = "name-in-suggested">{val.name}</div>
+            <div>&nbsp;</div>
             <div className = "skills-in-suggested">{val.skillsList}</div>
-            <button onClick = {this.testButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button> <br></br>
+            <div>&nbsp;</div>
+            <button onClick = {this.viewProfileButton} id = {val.id} className = "profile-button">View Profile</button> &nbsp; 
+            <button onClick = {this.friendRequestButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button> &nbsp; &nbsp;
             <br></br></div> 
         )})}
     </div>

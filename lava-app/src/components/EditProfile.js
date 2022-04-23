@@ -20,7 +20,6 @@ class EditProfile extends Component {
         states = []
         skillsArray = []
         skillsDefault = []
-        
         stateNames.forEach(function(element) {  
         states.push({ label:element, value: element })})
 

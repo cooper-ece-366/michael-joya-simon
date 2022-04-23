@@ -94,10 +94,10 @@
 }
 
 .friend-button {
-    padding: 10px;
-    font-weight: bold;
-    margin-top: 20px;
+    border: 2px solid orange;
+    background-color: orange;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .friend-button:hover {
@@ -106,4 +106,31 @@
 
 .skills-in-suggested {
     font-style: italic;
+}
+
+.profile-button {
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.profile-button:hover {
+    cursor: pointer;
+    background-color: darkorange;
+}
+
+.friend-button:hover {
+    cursor: pointer;
+    background-color: darkorange;
+}
+
+.profile-filter-img {
+    text-align:center;
+    max-width: 50px;
+}
+
+.name-in-suggested { 
+    position: relative;
+    text-align: center;
 }
