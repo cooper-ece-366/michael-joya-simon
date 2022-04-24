@@ -1,21 +1,20 @@
 import React from 'react';
-import './requestlist.css';
+import './Outgoing.css';
 
-const RequestList=({id, name, interests, img, msg})=>{
+const Outgoing=({id, name, skillsList, imageUrl})=>{
     return(
         <div>
             <section className="request">
                 <div className="imagebox">
-                    <img src={`${img}/${id}`} alt={name} className="image"/>
+                    <img src={imageUrl} alt={name} className="image"/>
                 </div>
                 <div className="imagetext">
                     <h1 className="name">{name}</h1>
-                    <div>{interests}</div>
-                    <div>{msg}</div>
+                    <div>{skillsList}</div>
                 </div>
             </section>
         </div>
 
     )
 }
-export default RequestList;
+export default Outgoing;

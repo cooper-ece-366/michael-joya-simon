@@ -66,19 +66,20 @@ public class FriendsController {
 
     @GetMapping("/friends/add/{num}")
     @PreAuthorize("hasRole('USER')")
-    public String addFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+    public Friends addFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
 
+        Friends newFriend = new Friends();
         //Check if duplicate or sent in other direction
         if(friendsRepository.findByRequesterIDAndAddresseeID(((Long)userPrincipal.getId()).intValue(), num).size() != 0 || friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0){
-            return "Already Exists!";
+            return newFriend;
         }
-        Friends newFriend = new Friends();
+
         newFriend.setStatus(false);
         newFriend.setRequesterID(((Long)userPrincipal.getId()).intValue());
         newFriend.setAddresseeID(num);
         friendsRepository.save(newFriend);
 
-        return "New Friend";
+        return newFriend;
     }
 
     @GetMapping("/friends/friend")
@@ -104,18 +105,36 @@ public class FriendsController {
 
     @GetMapping("/friends/accept/{num}")
     @PreAuthorize("hasRole('USER')")
-    public String acceptFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+    public Friends acceptFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+
+
         if(friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0)
         {
             List<Friends> tmp = friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue());
             Friends updatedFriend = tmp.get(0);
             updatedFriend.setStatus(true);
             friendsRepository.save(updatedFriend);
-            return "Accepted";
+            return updatedFriend;
         }
-
-        return "Does not exist";
+        Friends blankFriend = new Friends();
+        return blankFriend;
     }
 
-    //change get requests to return list of users instead of list of friends
+    @GetMapping("/friends/decline/{num}")
+    @PreAuthorize("hasRole('USER')")
+    public Friends declineFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+
+
+        if(friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0)
+        {
+            List<Friends> tmp = friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue());
+            Friends deletedFriend = tmp.get(0);
+            friendsRepository.delete(deletedFriend);
+            return deletedFriend;
+        }
+
+        Friends blankFriend = new Friends();
+        return blankFriend;
+    }
+
 }

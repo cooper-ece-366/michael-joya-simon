@@ -1,13 +1,28 @@
 /* how do i make the columns have space in between them?*/
 
-.column{
-    float: left;
+.column-left{
     background-color: #eaebee;
     padding: 10px;
-    margin:50px auto;
-    width: 600px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px black;
+    min-height: 600px;
+    border-top-left-radius: 20px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    min-width: 400px;
+    margin-left: 15%;
+}
+
+.column-right{
+    background-color: #eaebee;
+    padding: 10px;
+    min-height: 600px;
+    border-top-right-radius: 20px;
+    border-left: black 2px solid;
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    min-width: 400px;
+    margin-right: 15%;
 }
 
 .row:after{
@@ -17,30 +32,34 @@
 }
 
 .row{
-    padding: 25px 50px 75px 100px;
+    padding: 50px 50px 100px 100px;
+    align-items: center;
+    
 }
 .dropdown{
     display:flex;
-    padding-bottom: 13px;
+    margin: auto;
 }
 /* Dropdown Button */
 .dropbtn {
     color: black;
-    padding: 16px;
-    font-size: 2em;
+    padding: 12px;
+    font-size: 1.2em;
     border: none;
     cursor: pointer;
     font-weight:bold;
     justify-content: center;
     align-items: center;
     margin:auto;
+    border-radius: 10px;
 }
 .dropbtn:hover{
-   background-color: darkgray;
+   color: darkgray;
 }
 
 .dropbtn.active{
-    background-color:orange;
+    color:orange;
+
 }
 
 
