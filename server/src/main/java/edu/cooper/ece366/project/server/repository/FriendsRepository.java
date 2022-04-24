@@ -13,5 +13,7 @@ public interface FriendsRepository extends JpaRepository<Friends, Long>{
     List<Friends> findByRequesterIDAndStatus(int id, boolean stat);
     List<Friends> findByAddresseeIDAndStatus(int id, boolean stat);
     List<Friends> findByRequesterIDAndAddresseeID(int id1, int id2);
+    List<Friends> findByRequesterIDAndStatusOrAddresseeIDAndStatus(int id1, boolean bool1, int id2, boolean bool2);
+
 
 }

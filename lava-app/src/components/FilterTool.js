@@ -118,7 +118,7 @@ class Filter extends Component {
                                 )
                             }
                         </div> <div>&nbsp;</div>
-            <div classname = "name-in-suggested">{val.name}</div>
+            <div className = "name-in-suggested">{val.name}</div>
             <div>&nbsp;</div>
             <div className = "skills-in-suggested">{val.skillsList}</div>
             <div>&nbsp;</div>

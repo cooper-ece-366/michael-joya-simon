@@ -18,6 +18,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,36 +32,90 @@ public class FriendsController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/friends/requester/{num}")
+    @GetMapping("/friends/requester")
     @PreAuthorize("hasRole('USER')")
-    public List<Friends> getRequester(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+    public List<User> getRequester(@CurrentUser UserPrincipal userPrincipal) {
 
-        return friendsRepository.findByRequesterIDAndStatus(num, false);
-    }
+        List<Friends> requested = friendsRepository.findByRequesterIDAndStatus(((Long)userPrincipal.getId()).intValue(), false);
+        List<User> requestedUsers = new ArrayList<>();
 
-    @GetMapping("/friends/addressee/{num}")
-    @PreAuthorize("hasRole('USER')")
-    public List<Friends> getAddressee(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
-
-        return friendsRepository.findByAddresseeIDAndStatus(num, false);
-    }
-
-
-    @PostMapping("/friends/add")
-    @PreAuthorize("hasRole('USER')")
-    public Friends addFriend(@CurrentUser UserPrincipal userPrincipal,
-                             @Valid @RequestBody Friends newFriend) {
-
-        //Check if duplicate before saving
-        if(friendsRepository.findByRequesterIDAndAddresseeID(newFriend.getRequesterID(), newFriend.getAddresseeID()).size() != 0){
-            return newFriend;
+        for (int i = 0; i < requested.size(); i++)
+        {
+            requestedUsers.add(userRepository.findById((long)requested.get(i).getAddresseeID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
         }
 
+
+        return requestedUsers;
+    }
+
+    @GetMapping("/friends/addressee")
+    @PreAuthorize("hasRole('USER')")
+    public List<User> getAddressee(@CurrentUser UserPrincipal userPrincipal) {
+
+        List<Friends> incoming = friendsRepository.findByAddresseeIDAndStatus(((Long)userPrincipal.getId()).intValue(), false);
+        List<User> incomingUsers = new ArrayList<>();
+
+        for (int i = 0; i < incoming.size(); i++)
+        {
+            incomingUsers.add(userRepository.findById((long)incoming.get(i).getRequesterID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
+        }
+
+
+        return incomingUsers;
+    }
+
+    @GetMapping("/friends/add/{num}")
+    @PreAuthorize("hasRole('USER')")
+    public String addFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+
+        //Check if duplicate or sent in other direction
+        if(friendsRepository.findByRequesterIDAndAddresseeID(((Long)userPrincipal.getId()).intValue(), num).size() != 0 || friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0){
+            return "Already Exists!";
+        }
+        Friends newFriend = new Friends();
+        newFriend.setStatus(false);
+        newFriend.setRequesterID(((Long)userPrincipal.getId()).intValue());
+        newFriend.setAddresseeID(num);
         friendsRepository.save(newFriend);
 
-        return newFriend;
+        return "New Friend";
     }
-    
-    //Get accept logic to work
-    //get Friends to work (status = true)
+
+    @GetMapping("/friends/friend")
+    @PreAuthorize("hasRole('USER')")
+    public List<User> getAllFriends(@CurrentUser UserPrincipal userPrincipal) {
+
+        List<Friends> friends = friendsRepository.findByRequesterIDAndStatusOrAddresseeIDAndStatus(((Long)userPrincipal.getId()).intValue(), true, ((Long)userPrincipal.getId()).intValue(), true);
+        List<User> userFriends = new ArrayList<>();
+
+
+        for (int i = 0; i < friends.size(); i++)
+        {
+            if(friends.get(i).getAddresseeID() == userPrincipal.getId()) {
+                userFriends.add(userRepository.findById((long) friends.get(i).getRequesterID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
+            }
+            else {
+                userFriends.add(userRepository.findById((long) friends.get(i).getAddresseeID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
+            }
+        }
+
+        return userFriends;
+    }
+
+    @GetMapping("/friends/accept/{num}")
+    @PreAuthorize("hasRole('USER')")
+    public String acceptFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
+        if(friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0)
+        {
+            List<Friends> tmp = friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue());
+            Friends updatedFriend = tmp.get(0);
+            updatedFriend.setStatus(true);
+            friendsRepository.save(updatedFriend);
+            return "Accepted";
+        }
+
+        return "Does not exist";
+    }
+
+    //change get requests to return list of users instead of list of friends
 }
