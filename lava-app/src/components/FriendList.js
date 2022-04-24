@@ -1,16 +1,16 @@
 import React from 'react';
 import './FriendList.css';
 
-const FriendList=({id, name, interests, img})=>{
+const FriendList=({id, name, skillsList, imageUrl})=>{
     return(
         <div>
             <section className="friend">
                 <div className="imagebox">
-                    <img src={`${img}/${id}`} alt={name} className="image"/>
+                    <img src={imageUrl} alt={name} className="image"/>
                 </div>
                 <div className="imagetext">
                     <h2 className="name">{name}</h2>
-                    <p>{interests}</p>
+                    <p>{skillsList}</p>
                 </div>
             </section>
         </div>

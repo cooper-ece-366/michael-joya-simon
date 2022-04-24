@@ -8,10 +8,11 @@
     border-radius: 50%;
     background-color: white;
 }
-.Sent{
+.request{
     display:flex;
+    height: 120px;
 }
-.Sent:hover{
+.request:hover{
     background-color: darkgray;
 }
 

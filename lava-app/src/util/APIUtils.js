@@ -73,3 +73,69 @@ export function getFilteredUsers(filterRequest) {
         body: JSON.stringify(filterRequest)
     });
 }
+
+export function getFriends() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/friend",
+        method: 'GET'
+    })
+}
+
+export function getFriendRequests() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/requester",
+        method: 'GET'
+    })
+}
+
+export function getFriendAddressee() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/addressee",
+        method: 'GET'
+    })
+}
+
+export function postAccept(id) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/accept/" + id,
+        method: 'GET'
+    })
+}
+
+export function postAdd(id) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/add/" + id,
+        method: 'GET'
+    })
+}
+
+export function postDelete(id) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/friends/decline/" + id,
+        method: 'GET'
+    })
+}

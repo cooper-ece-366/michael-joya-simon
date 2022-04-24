@@ -3,8 +3,7 @@ import './FilterTool.css';
 import Select from 'react-select';
 import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
-import { getFilteredUsers } from '../util/APIUtils';
-import { API_BASE_URL } from '../constants';
+import { getFilteredUsers, postAdd } from '../util/APIUtils';
 
 
 class Filter extends Component {
@@ -61,7 +60,9 @@ class Filter extends Component {
     friendRequestButton(e) {
           var SendRequestID = e.target.id
           console.log(SendRequestID)
-          Alert.success("Sent Study Buddy Request!")  
+          postAdd(SendRequestID)
+          Alert.success("Friend Request Sent")
+
     }
 
     viewProfileButton(e) { 
@@ -118,7 +119,7 @@ class Filter extends Component {
                                 )
                             }
                         </div> <div>&nbsp;</div>
-            <div classname = "name-in-suggested">{val.name}</div>
+            <div className = "name-in-suggested">{val.name}</div>
             <div>&nbsp;</div>
             <div className = "skills-in-suggested">{val.skillsList}</div>
             <div>&nbsp;</div>

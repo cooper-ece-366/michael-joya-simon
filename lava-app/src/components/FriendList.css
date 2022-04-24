@@ -10,6 +10,7 @@
 }
 .friend{
     display:flex;
+    height: 120px;
 }
 .friend:hover{
     background-color: darkgray;
