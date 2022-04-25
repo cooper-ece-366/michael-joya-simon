@@ -5,6 +5,7 @@ import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
 import { getFilteredUsers } from '../util/APIUtils';
 import { API_BASE_URL } from '../constants';
+import './Card.css'
 
 
 class Filter extends Component {
@@ -66,6 +67,7 @@ class Filter extends Component {
 
     viewProfileButton(e) { 
         console.log(e.target.id)
+
     }
 
   render() { 
@@ -107,24 +109,24 @@ class Filter extends Component {
     {this.state.filteredUserList.map((val) => {
         return (
         <div className = "card" key = {val.id}>
-             <div className ="profile-filter-img">
-                            { 
-                                val.imageUrl ? (
-                                    <img src={val.imageUrl} alt={val.name}/>
-                                ) : (
-                                    <div className="text-avatar">
-                                        <span>{val.name && val.name[0]}</span>
-                                    </div>
-                                )
-                            }
-                        </div> <div>&nbsp;</div>
-            <div classname = "name-in-suggested">{val.name}</div>
-            <div>&nbsp;</div>
-            <div className = "skills-in-suggested">{val.skillsList}</div>
-            <div>&nbsp;</div>
-            <button onClick = {this.viewProfileButton} id = {val.id} className = "profile-button">View Profile</button> &nbsp; 
-            <button onClick = {this.friendRequestButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button> &nbsp; &nbsp;
-            <br></br></div> 
+            <div className = "upper-container">
+                <div className = 'image-container'>
+                    <img src = {val.imageUrl} alt = {val.name} height = "100px" width = "100px"/>
+                </div>
+                <div className = "lower-container">
+                <div classname = "name-in-suggested">{val.name}</div>
+                <div>&nbsp;</div>
+                <div className = "skills-in-suggested">Skills: {val.skillsList}</div>
+                <div>&nbsp;</div>
+                <div className = "career">{val.career}</div>
+                <div>&nbsp;</div>
+                <div className = "bio">{val.bio}</div>
+                <div>&nbsp;</div> 
+                </div>
+                <div>&nbsp;</div>
+                <button onClick = {this.friendRequestButton} id = {val.id} className = "friend-button">Send Study Buddy Request</button> 
+            </div>
+        </div> 
         )})}
     </div>
 </div>
