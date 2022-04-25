@@ -17,6 +17,7 @@
     border-right: .15em solid orange;
     animation: typing 1s steps(20,end) forwards;
     animation-delay: 700ms;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .home-title-container {
