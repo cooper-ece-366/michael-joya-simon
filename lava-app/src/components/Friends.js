@@ -2,31 +2,49 @@
 import React, { Component,} from 'react';
 import './Friends.css';
 import FriendList from './FriendList';
-import frienddata from "./frienddata";
-import RequestList from './requestlist';
-import requestdata from "./requestdata";
-import sentdata from "./sentdata";
-import SentList from "./SentList";
+import Outgoing from './Outgoing';
+import Incoming from "./Incoming";
+import { getFriends, getFriendAddressee, getFriendRequests } from '../util/APIUtils';
 
 
-
+var test = []
 class Friends extends Component {
     constructor(props){
         super(props);
         this.state = {
-            frienddata, requestdata, sentdata, isRequests: true,
+            frienddata: [], 
+            requestdata: [], 
+            addresseedata: [], 
+            isRequests: true,
         };
         this.toggleIsRequests = this.toggleIsRequests.bind(this);
     }
 
+    
     toggleIsRequests() {
         this.setState({isRequests: !this.state.isRequests});
     }
 
+    async componentDidMount(e) {
+            await getFriends().then((response) => {
+                console.log(this.setState({frienddata: response}))
+                })
+
+            await getFriendRequests().then((response) => {
+                console.log(this.setState({requestdata: response}))
+                })
+
+            await getFriendAddressee().then((response) => {
+                console.log(this.setState({addresseedata: response}))
+                })
+
+    }
+
+    
     render() {
-        return (
+        return (<div>
                 <div className="row">
-                    <div className="column">
+                    <div className="column-left">
                         <h1 className="Study Buddies">
                             Study Buddies
                         </h1>
@@ -37,23 +55,26 @@ class Friends extends Component {
 
                         </div>
                     </div>
-                    <div className="column">
+                    <div className="column-right">
                         <div className="dropdown">
-                            <button onClick={() => {this.setState({isRequests:true})}} className={`dropbtn ${this.state.isRequests ? "active" : ""}`}>Requests</button>
-                            <button onClick={() => {this.setState({isRequests: false})}} className={`dropbtn ${this.state.isRequests ? "" : "active"}`}>Sent</button>
+                        <h1>Requests</h1>
+                            <button onClick={() => {this.setState({isRequests: true})}} className={`dropbtn ${this.state.isRequests ? "active" : ""}`}>Incoming</button>
+                            <button onClick={() => {this.setState({isRequests: false})}} className={`dropbtn ${this.state.isRequests ? "" : "active"}`}>Outgoing</button>
+                            
                         </div>
-                        {this.state.isRequests ?
+                        {!this.state.isRequests ?
                         <div>
                             {this.state.requestdata.map((item   )=>{
-                                return(<RequestList {...item} key={item.id}/>)
+                                return(<Outgoing {...item} key={item.id}/>)
                             })}
                         </div>:
                             <div>
-                                {this.state.sentdata.map((item) => {
-                                    return (<SentList {...item} key={item.id}/>)
+                                {this.state.addresseedata.map((item) => {
+                                    return (<Incoming {...item} key={item.id}/>)
                                 })}
                             </div>}
                     </div>
+                </div>
                 </div>
         )
     }

@@ -1,0 +1,63 @@
+.imagebox{
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.image{
+    width:80px;
+    border-radius: 50%;
+    background-color: white;
+}
+.Sent{
+    display:flex;
+    height: 120px;
+}
+.Sent:hover{
+    background-color: darkgray;
+}
+
+.imagetext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagetext h1{
+    margin: 0px;
+}
+.name{
+    text-transform: capitalize;
+}
+
+.accept-button {
+    border: 2px solid rgb(69, 207, 69);
+    background-color: rgb(69, 207, 69);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+.decline-button {
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 2%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.decline-button:hover {
+    cursor: pointer;
+    background-color: red;
+    border: 2px solid darkred
+}
+
+.accept-button:hover {
+    cursor: pointer;
+    background-color: rgb(69, 207, 69);
+    border: 2px solid rgb(11, 59, 11);
+}

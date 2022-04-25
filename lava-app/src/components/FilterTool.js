@@ -3,9 +3,8 @@ import './FilterTool.css';
 import Select from 'react-select';
 import {options, stateNames} from '../constants/skillsList'
 import Alert from 'react-s-alert';
-import { getFilteredUsers } from '../util/APIUtils';
-import { API_BASE_URL } from '../constants';
 import './Card.css'
+import { getFilteredUsers, postAdd } from '../util/APIUtils';
 
 
 class Filter extends Component {
@@ -21,7 +20,6 @@ class Filter extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.friendRequestButton = this.friendRequestButton.bind(this); 
     this.changeHandlerSkills = this.changeHandlerSkills.bind(this);
-    this.viewProfileButton = this.viewProfileButton.bind(this);
     }
 
     handleOnChange(e) {
@@ -62,13 +60,11 @@ class Filter extends Component {
     friendRequestButton(e) {
           var SendRequestID = e.target.id
           console.log(SendRequestID)
-          Alert.success("Sent Study Buddy Request!")  
-    }
-
-    viewProfileButton(e) { 
-        console.log(e.target.id)
+          postAdd(SendRequestID)
+          Alert.success("Study Buddy Request Sent")
 
     }
+
 
   render() { 
     return(

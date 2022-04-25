@@ -57,6 +57,7 @@
     padding: 20px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+
 }
 
 .all-card {
@@ -84,9 +85,20 @@
     background: white;
     padding: 20px;
     display: flex;
-    width: 100%;
-    height: 600px;
+    width: 50%;
+    height: 130px;
+    overflow: hidden;
     justify-content: center;
+    transition: width 1s, height 1s, transform 1s;
+    margin: 0 auto;
+    
+}
+
+.card:hover {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    background-image: radial-gradient(orange, white 100%);
 }
 
 .input-box-filter {
@@ -129,5 +141,4 @@
 
 .name-in-suggested { 
     position: relative;
-    text-align: center;
 }
