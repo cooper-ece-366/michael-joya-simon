@@ -11,6 +11,22 @@
     font-weight: 400;
     color: rgba(0,0,0,0.70);
     margin-top: 50px; 
+    overflow:hidden;
+    white-space: nowrap;
+    width:0;
+    border-right: .15em solid orange;
+    animation: typing 1s steps(20,end) forwards;
+    animation-delay: 700ms;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.home-title-container {
+    display:inline-block;
+}
+
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
 }
 
 .graf-bg-container {
@@ -265,6 +281,28 @@
     to {
         border-radius: 50%;
         transform: translate(-50%,-50%) rotateX(-45deg) rotateY(-45deg) rotate(1turn);
+        opacity: 0
+    }
+}
+
+.graf-circle:nth-child(12) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(-45deg) rotateY(-45deg) rotate(0deg);
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 5px solid purple;
+    border-bottom: none;
+    border-right: none;
+    animation: scaleTwelve 2s infinite alternate linear
+}
+
+@keyframes scaleTwelve {
+    to {
+        border-radius: 50%;
+        transform: translate(-50%,-50%) rotateX(-190deg) rotateY(-130deg) rotate(1turn);
         opacity: 0
     }
 }

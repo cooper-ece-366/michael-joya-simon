@@ -51,8 +51,6 @@ class EditProfile extends Component {
         this.sleep = this.sleep.bind(this);
     }
 
-    
-
     //Change handler for regular inputs
     changeHandler(event) {
         this.setState(

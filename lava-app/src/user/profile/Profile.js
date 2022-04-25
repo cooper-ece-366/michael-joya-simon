@@ -27,12 +27,16 @@ class Profile extends Component {
                         <div className="profile-name">
                            <h2>{this.props.currentUser.name}</h2>
                            <p className="profile-email">{this.props.currentUser.email}</p>
+                           <div className= "profile-stats">
+                                DOB: {this.props.currentUser.birthday}<br/>
+                                Skills: {this.props.currentUser.skillsList}<br/>
+                                Location: {this.props.currentUser.stateLocated}<br/>
+                                Occupation: {this.props.currentUser.career}<br/>
+                                <br></br>
+                                Biography: <br></br>{this.props.currentUser.bio}<br/>
+                            </div>
                         </div>
-                        {this.props.currentUser.birthday}<br/>
-                        {this.props.currentUser.bio}<br/>
-                        {this.props.currentUser.skillsList}<br/>
-                        {this.props.currentUser.stateLocated}<br/>
-                        {this.props.currentUser.career}<br/>
+                        
                         <button className = "edit-button">
                             <NavLink to="/editProfile" className = "edit-words">Edit</NavLink>
                         </button>
