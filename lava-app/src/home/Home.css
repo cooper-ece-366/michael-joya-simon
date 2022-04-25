@@ -16,6 +16,7 @@
     width:0;
     border-right: .15em solid orange;
     animation: typing 1s steps(20,end) forwards;
+    animation-delay: 700ms;
 }
 
 .home-title-container {
