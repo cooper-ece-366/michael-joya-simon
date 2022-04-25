@@ -19,9 +19,12 @@ class Home extends Component {
                             <div className="graf-circle"></div>
                             <div className="graf-circle"></div>
                             <div className="graf-circle"></div>
+                            <div className="graf-circle"></div>
                         </div>
                     </div>
-                    <h1 className="home-title">Where Knowledge Flows</h1>
+                    <div className="home-title-container">
+                        <div className="home-title">Where Knowledge Flows</div>
+                    </div>     
                 </div>
             </div>
         )
