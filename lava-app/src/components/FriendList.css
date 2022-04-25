@@ -27,3 +27,21 @@
 .name{
     text-transform: capitalize;
 }
+
+.remove-button {
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 0px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    align-content: right;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+    background-color: red;
+    border: 2px solid darkred
+}
