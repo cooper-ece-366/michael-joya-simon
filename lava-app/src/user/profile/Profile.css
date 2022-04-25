@@ -5,7 +5,12 @@
 .profile-info {
     text-align: center;
 }
-
+.profile-stats { 
+    text-align: center;
+    vertical-align: middle;
+    width: 350px;
+    margin:0 auto;
+}
 .profile-info .profile-avatar img {
     border-radius: 50%;
     max-width: 250px;
