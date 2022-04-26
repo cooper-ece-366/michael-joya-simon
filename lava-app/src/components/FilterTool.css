@@ -19,6 +19,9 @@
 
 .form-total { 
     text-align: center;
+    height: 200px;
+    position: sticky;
+    top: 0;
 }
 
 .form-box{ 
@@ -30,7 +33,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     min-width: 400px;
-
+    
 }
 
 .sub-button { 
