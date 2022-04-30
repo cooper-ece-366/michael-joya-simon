@@ -132,6 +132,13 @@ public class FriendsController {
             friendsRepository.delete(deletedFriend);
             return deletedFriend;
         }
+        else if (friendsRepository.findByRequesterIDAndAddresseeID(((Long)userPrincipal.getId()).intValue(), num).size() != 0)
+        {
+            List<Friends> tmp = friendsRepository.findByRequesterIDAndAddresseeID(((Long)userPrincipal.getId()).intValue(), num);
+            Friends deletedFriend = tmp.get(0);
+            friendsRepository.delete(deletedFriend);
+            return deletedFriend;
+        }
 
         Friends blankFriend = new Friends();
         return blankFriend;
