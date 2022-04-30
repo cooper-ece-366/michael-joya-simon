@@ -1,6 +1,5 @@
-/* how do i make the columns have space in between them?*/
-
 .column-left{
+    position:relative;
     background-color: #eaebee;
     padding: 10px;
     min-height: 600px;
@@ -13,11 +12,11 @@
 }
 
 .column-right{
+    position:relative;
     background-color: #eaebee;
     padding: 10px;
     min-height: 600px;
     border-top-right-radius: 20px;
-    border-left: black 2px solid;
     display: inline-block;
     width: 30%;
     vertical-align: top;
@@ -54,12 +53,19 @@
     border-radius: 10px;
 }
 .dropbtn:hover{
-   color: darkgray;
+    cursor: pointer;
+    background-color: darkorange;
+    transform: scale(0.97)
 }
 
 .dropbtn.active{
     color:orange;
-
 }
 
+.Study-Buddies {
+    text-align:center;
+}
 
+.Requests { 
+    text-align:center;
+}
