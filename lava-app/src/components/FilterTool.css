@@ -1,7 +1,7 @@
 .head { 
     color : white;
     text-align: center;
-    background-color: orange;
+    background-color: rgb(255, 183, 50);
     margin: auto;
     width: 40%;
     min-width: 400px;
@@ -39,7 +39,7 @@
 .sub-button { 
     text-align: center;
     border: 2px solid orange;
-    background-color: orange;
+    background-color: rgb(255, 183, 50);
     border-radius: 10px;
     padding: 10px;
     margin: 20px;
@@ -54,7 +54,7 @@
 .suggested {
     color : white;
     text-align: center;
-    background-color: orange;
+    background-color: rgb(255, 183, 50);
     margin: auto;
     padding: 20px;
     border-top-right-radius: 20px;

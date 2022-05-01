@@ -48,7 +48,7 @@ class Friends extends Component {
                         <h1 className="Study-Buddies">
                             Study Buddies
                         </h1>
-                        <div>
+                        <div className = "buddy-list">
                             {this.state.frienddata.map((item)=>{
                                 return(<FriendList {...item} key={item.id}/>)
                             })}
@@ -62,8 +62,8 @@ class Friends extends Component {
                         <div className="dropdown">
                             <button onClick={() => {this.setState({isRequests: true})}} className={`dropbtn ${this.state.isRequests ? "active" : ""}`}>Incoming</button>
                             <button onClick={() => {this.setState({isRequests: false})}} className={`dropbtn ${this.state.isRequests ? "" : "active"}`}>Outgoing</button>
-                            
                         </div>
+                        &nbsp;
                         <div className = "request-list">
                         {!this.state.isRequests ?
                         <div>
