@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './AppHeader.css';
+import '../components/EditProfile.css'
+import '../components/Card.css'
+import '../components/FriendList.css'
+import '../components/Friends.css'
+import '../components/Incoming.css'
+import '../components/Outgoing.css'
 
 class AppHeader extends Component {
     render() {

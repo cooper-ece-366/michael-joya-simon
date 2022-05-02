@@ -2,13 +2,15 @@
     height: 60px;
     position: relative;
     z-index: 10;
+    background: #fbf1e2;
 }
+
 
 .app-title {
     line-height: 60px;
     vertical-align: middle;
     font-size: 1.35em;
-    color: orange;
+    color: rgba(55, 186, 226, 0.7);
 }
 
 .app-branding {
@@ -36,7 +38,7 @@
     vertical-align: middle;
     padding-left: 15px;
     padding-right: 15px;
-    color: rgba(0,0,0,0.65);
+    color:#e16745;
 }
 
 .app-nav ul li a:hover {

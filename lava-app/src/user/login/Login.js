@@ -35,7 +35,7 @@ class Login extends Component {
         }
 
         return (
-            <div className="login-container">
+            <div className="login-container" style = {{height:"100vh"}}>
                 <div className="login-content">
                     <h1 className="login-title">Login to Lava</h1>
                     <SocialLogin />

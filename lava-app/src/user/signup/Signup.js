@@ -19,7 +19,7 @@ class Signup extends Component {
         }
 
         return (
-            <div className="signup-container">
+            <div className="signup-container" style = {{height:"100vh"}}>
                 <div className="signup-content">
                     <h1 className="signup-title">Signup with Lava</h1>
                     <SocialSignup />

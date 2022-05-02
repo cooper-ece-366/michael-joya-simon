@@ -1,0 +1,17 @@
+@font-face {
+    font-family: trakya1;
+    src: local("trakya1"),
+         url("trakya1.otf")
+}
+
+@font-face {
+    font-family: trakya2;
+    src: local("trakya2"),
+         url("trakya2.otf")
+}
+
+@font-face {
+    font-family: calif;
+    src: local("calif"),
+         url("calif.ttf")
+}

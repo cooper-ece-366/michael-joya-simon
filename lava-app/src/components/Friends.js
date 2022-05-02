@@ -5,6 +5,7 @@ import FriendList from './FriendList';
 import Outgoing from './Outgoing';
 import Incoming from "./Incoming";
 import { getFriends, getFriendAddressee, getFriendRequests } from '../util/APIUtils';
+import '../fonts/font.css';
 
 
 var test = []
@@ -43,11 +44,15 @@ class Friends extends Component {
     
     render() {
         return (<div>
-                <div className="row">
+                <div className="row" style={{height:"100vh"}}>
                     <div className="column-left">
                         <h1 className="Study-Buddies">
                             Study Buddies
                         </h1>
+                        <div className = "tempsearch">
+                        <img src="https://t4.ftcdn.net/jpg/03/39/89/15/360_F_339891511_sZ1XgIZnspfn9sKdYN3jZO3JHny9ILz1.jpg"></img>
+                        </div>
+                        &nbsp;&nbsp;
                         <div className = "buddy-list">
                             {this.state.frienddata.map((item)=>{
                                 return(<FriendList {...item} key={item.id}/>)

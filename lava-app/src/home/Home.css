@@ -4,26 +4,28 @@
     overflow: auto;
     position: relative;
     padding-top: 60px;
+    background: #000;
 }
 
 .home-title {
     font-size: 25px;
     font-weight: 400;
-    color: rgba(0,0,0,0.70);
+    color: rgba(55, 186, 226, 0.7);
     margin-top: 50px; 
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    border-right: .15em solid orange;
+    border-right: .15em solid rgb(156, 48, 71);
     animation-delay: 700ms;
     animation: typing 3s steps(20,end) forwards infinite alternate;
-    
-    
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .home-title-container {
     display:inline-block;
+}
+.white-space {
+    color:#000;
 }
 
 @keyframes typing {
@@ -34,13 +36,19 @@
     33% {width: 100%}
     100% {width: 100%}
 }
-
+.lavagif {
+    overflow:hidden;
+    background-image: url(https://i.imgur.com/euQPPiK.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .graf-bg-container {
     width: 100%;
-    height: 310px;
+    height: 250px;
     overflow: hidden;
     perspective: 2000px;
-    opacity: .7
+    opacity: 0.7;
+    background: transparent;
 }
 
 .graf-layout {
@@ -76,10 +84,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(135deg) rotateY(135deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    border: 5px solid #ffa20a;
+    border: 5px solid #ff4f0a;
     border-left: none;
     border-top: none;
     animation: scaleTwo 5s infinite alternate linear
@@ -98,8 +106,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(45deg) rotateY(45deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #ec412c;
     border-bottom: none;
@@ -120,8 +128,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(45deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #fcbd00;
     border-top: none;
@@ -142,8 +150,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(135deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #2da94f;
     border-bottom: none;
@@ -164,8 +172,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(100deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 15px solid #f57700;
     border-bottom: none;
@@ -186,8 +194,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateY(-105deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 10px solid #2098f3;
     border-bottom: none;
@@ -208,8 +216,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateY(45deg) rotateX(45deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #30bbb0;
     border-bottom: none;
@@ -230,8 +238,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateY(135deg) rotateX(135deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #ff453c;
     border-bottom: none;
@@ -252,8 +260,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateY(113deg) rotateX(115deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #2098f3;
     border-bottom: none;
@@ -274,8 +282,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(-45deg) rotateY(-45deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #2098f3;
     border-bottom: none;
@@ -296,8 +304,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotateX(-45deg) rotateY(-45deg) rotate(0deg);
-    width: 310px;
-    height: 310px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid purple;
     border-bottom: none;
