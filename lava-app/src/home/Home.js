@@ -22,7 +22,7 @@ class Home extends Component {
                             <div className="graf-circle"></div>
                             <div className="graf-circle"></div>
                             <div className="graf-circle"></div>
-                        </div>
+                        </div> 
                     </div>
                     </div>
                     <div className="home-title-container">
