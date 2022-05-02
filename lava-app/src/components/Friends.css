@@ -1,6 +1,6 @@
 .column-left{
     position:relative;
-    background-color: #fbf1e2;
+    background-color: #3B3B3B;
     padding: 10px;
     min-height: 600px;
     border-top-left-radius: 20px;
@@ -10,13 +10,18 @@
     min-width: 400px;
     margin-left: 10%;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(225,103,69,255);
-    font-family: trakya1; 
+    border: 2px solid #474747;
+    box-shadow: 0 0 2px rgba(124, 124, 124, 0.07), 
+    0 0 4px rgba(124, 124, 124, 0.07), 
+    0 0 8px rgba(124, 124, 124, 0.07), 
+    0 0 16px rgba(124, 124, 124, 0.07),
+    0 0 32px rgba(124, 124, 124, 0.07), 
+    0 0 64px rgba(124, 124, 124, 0.07);
 }
 
 .column-right{
     position:relative;
-    background-color: #fbf1e2;
+    background-color: #3B3B3B;
     padding: 10px;
     min-height: 600px;
     border-top-right-radius: 20px;
@@ -26,7 +31,13 @@
     min-width: 400px;
     margin-right: 10%;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(225,103,69,255);
+    border: 2px solid #474747;
+    box-shadow: 0 0 2px rgba(124, 124, 124, 0.07), 
+                0 0 4px rgba(124, 124, 124, 0.07), 
+                0 0 8px rgba(124, 124, 124, 0.07), 
+                0 0 16px rgba(124, 124, 124, 0.07),
+                0 0 32px rgba(124, 124, 124, 0.07), 
+                0 0 64px rgba(124, 124, 124, 0.07);
 }
 
 .row:after{
@@ -34,19 +45,12 @@
     display: table;
     clear: both;
 }
-.Study-Buddies { 
-    color: rgba(55, 186, 226, 0.7); 
-    font-weight: 200;
-}
-.Requests { 
-    color: rgba(55, 186, 226, 0.7); 
-    font-weight: 200;
-}
+
 .row{
     padding: 50px 50px 100px 100px;
     align-items: center;
-    font-family: trakya1;
-    background-color: #fbf1e2;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
 }
 .dropdown{
     display:flex;
@@ -55,7 +59,9 @@
 /* Dropdown Button */
 .dropbtn {
     color: black;
-    background-color: #fbf1e2;
+    background-color: #3B3B3B;
+    border-color:black;
+    font-family: 'Radio Canada', sans-serif;
     padding: 12px;
     font-size: 1.2em;
     border: none;
@@ -68,29 +74,29 @@
 }
 .dropbtn:hover{
     cursor: pointer;
-    background-color: rgb(255, 207, 118);
-    transform: scale(0.97)
+    transform: scale(0.97);
+    background-color: #d1aefc;
+    transition: all 0.7s ease-in-out;
 }
 
 .dropbtn.active{
-    color:orange;
+    color:#BB86FC;
     
+}
+.dropbtn.active:hover{
+    color:#cfa7ff;
+    background-color:#9854fd;
+    transition: all 0.7s ease-in-out;
 }
 
 .Study-Buddies {
     text-align:center;
+    font-family: 'Radio Canada', sans-serif;
+    color:#BB86FC;
 }
-
 .Requests { 
     text-align:center;
+    font-family: 'Radio Canada', sans-serif;
+    color:#BB86FC;
 }
 
-.tempsearch img { 
-    display:block;
-    width: 70%;
-    height:50px;
-    border-radius: 100px;
-    object-fit:fill;
-    margin-left:auto;
-    margin-right:auto;
-}

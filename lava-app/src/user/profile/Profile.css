@@ -10,6 +10,14 @@
     vertical-align: middle;
     width: 350px;
     margin:0 auto;
+    color: rgba(255, 201, 102, 0.89);
+}
+.profile-email {
+    color: rgba(255, 201, 102, 0.89);
+}
+
+.profile-name { 
+    color: rgba(255, 201, 102, 0.89);
 }
 .profile-info .profile-avatar img {
     border-radius: 50%;
@@ -49,10 +57,10 @@
 
 .edit-button {
     background-color: orange;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 7px;
+    border-radius: 10px;
     margin-top: 20px;
-    
+    border: 2px solid black;
 }
 
 .edit-words {
@@ -62,5 +70,5 @@
 }
 
 .edit-words:hover {
-    color: grey;
+    color: white;
 }

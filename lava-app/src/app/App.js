@@ -77,7 +77,7 @@ class App extends Component {
     }
 
     return (
-      <div className="app">
+      <div className="app" style={{height:"100vh"}}>
         <div className="app-top-box">
           <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
             </div>

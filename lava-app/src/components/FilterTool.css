@@ -1,19 +1,21 @@
 .head { 
     color : white;
     text-align: center;
-    background-color: rgb(255, 183, 50);
+    background-color: #018786;
     margin: auto;
     width: 40%;
     min-width: 400px;
     padding: 20px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    font-family: 'Radio Canada', sans-serif;
 }
 
 .filter-total {
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: center;
+    background: #121212;
 }
 
 
@@ -22,18 +24,24 @@
     height: 200px;
     position: sticky;
     top: 0;
+    
 }
 
 .form-box{ 
     color: black; 
     width: 40%;
     margin: auto;
-    background-color: rgb(231, 231, 231);
+    background-color: #3B3B3B;
     padding: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     min-width: 400px;
-    
+    box-shadow: 0 0 2px rgba(124, 124, 124, 0.07), 
+    0 0 4px rgba(124, 124, 124, 0.07), 
+    0 0 8px rgba(124, 124, 124, 0.07), 
+    0 0 16px rgba(124, 124, 124, 0.07),
+    0 0 32px rgba(124, 124, 124, 0.07), 
+    0 0 64px rgba(124, 124, 124, 0.07);
 }
 
 .sub-button { 
@@ -54,12 +62,11 @@
 .suggested {
     color : white;
     text-align: center;
-    background-color: rgb(255, 183, 50);
+    background-color: #018786;
     margin: auto;
+    border-radius: 10px;
     padding: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-
+    font-family: 'Radio Canada', sans-serif;
 }
 
 .all-card {
@@ -67,14 +74,23 @@
     min-width: 400px;
     color: black;
     width: 60%;
-    
 }
 
 .subtitle-filter {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
+    color: rgb(207, 207, 207);
 }
+
+.input-box-filter {
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 80%;
+    color:rgb(207, 207, 207);
+}
+
 
 .select { 
     margin: auto;
@@ -84,7 +100,7 @@
 }
 
 .card { 
-    background: white;
+    background: #121212;
     padding: 20px;
     display: flex;
     width: 50%;
@@ -100,15 +116,9 @@
     width: 100%;
     height: 500px;
     border-radius: 5px;
-    background-image: radial-gradient(orange, white 100%);
+    background-image: radial-gradient(#018786,#CF6679 900%);
 }
 
-.input-box-filter {
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    width: 80%;
-}
 
 .friend-button {
     border: 2px solid orange;

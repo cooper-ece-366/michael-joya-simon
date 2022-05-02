@@ -29,7 +29,7 @@
     float: right;
     padding: 10px;
     font-weight: bold;
-    background-color: lightgray;
+    background-color: orange;
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -59,7 +59,7 @@
     width: 250px;
     padding: 12px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
 
 }
 
@@ -68,27 +68,27 @@
     height: 70px;
     padding: 10px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
     max-width: 100%;
 }
 
 .name-input {
     padding: 12px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
     width: 250px;
 }
 
 .career-input {
     padding: 12px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
     width: 250px;
 }
 
 .select-edit {
     width: 100%;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
     border-radius: 5px;
     max-height: 100px;
 }
@@ -101,7 +101,7 @@
     padding: 15px;
     background-color: orange;
     color: black;
-    border: 2px solid black;
+    border: solid 2px rgb(253, 189, 105);
     border-radius: 5px;
     font-size: medium;
     font-weight: bold;
@@ -109,12 +109,12 @@
 
 .sub:hover {
     cursor: pointer;
-    color: grey;
+    color: white;
 }
 
 .select-state {
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px rgb(253, 189, 105);
     width: 250px;
     flex: right;
 }
@@ -124,3 +124,10 @@
     grid-template-columns: 50% 50%;
 }
 
+.field-small {
+    color: orange;
+}
+
+.field { 
+    color: orange;
+}

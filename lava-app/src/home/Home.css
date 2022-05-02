@@ -18,7 +18,7 @@
     border-right: .15em solid rgb(156, 48, 71);
     animation-delay: 700ms;
     animation: typing 3s steps(20,end) forwards infinite alternate;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'RadioCanada', sans-serif;
 }
 
 .home-title-container {
