@@ -1,5 +1,6 @@
 import React from 'react';
 import './Outgoing.css';
+import friendRemove from './FriendList.js';
 
 const Outgoing=({id, name, skillsList, imageUrl})=>{
     return(
@@ -12,6 +13,7 @@ const Outgoing=({id, name, skillsList, imageUrl})=>{
                     <h1 className="name">{name}</h1>
                     <div>{skillsList}</div>
                 </div>
+                <button onClick = {friendRemove} className = "remove-button">Remove</button>
             </section>
         </div>
 

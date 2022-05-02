@@ -5,3 +5,16 @@
 .s-alert-close::before, .s-alert-close::after {
     width: 2px;
 }
+
+.app { 
+    background:#121212;
+}
+
+.app-body { 
+    background:#121212;
+    height: 100vh;
+}
+
+.tmp-cal {
+    background:white;
+}

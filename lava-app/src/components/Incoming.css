@@ -11,9 +11,13 @@
 .Sent{
     display:flex;
     height: 120px;
+    transition: width 1s, height 1s, transform 1s;
+    border-radius: 100px;
 }
 .Sent:hover{
-    background-color: darkgray;
+    width: 100%;
+    border-radius: 10px;
+    background-image: radial-gradient(orange, white 100%);
 }
 
 .imagetext{

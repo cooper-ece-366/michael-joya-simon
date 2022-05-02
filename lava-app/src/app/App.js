@@ -12,6 +12,7 @@ import EditProfile from '../components/EditProfile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
 import Filter from '../components/FilterTool';
 import Friends from '../components/Friends';
+import CalendarComp from '../components/Calendar';
 import NotFound from '../common/NotFound';
 import LoadingIndicator from '../common/LoadingIndicator';
 import { getCurrentUser } from '../util/APIUtils';
@@ -21,6 +22,8 @@ import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
+import { render } from 'react-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class App extends Component {
   constructor(props) {
@@ -75,12 +78,12 @@ class App extends Component {
     }
 
     return (
-      <div className="app">
+      <div className="app" style={{height:"100vh"}}>
         <div className="app-top-box">
           <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
-        </div>
+            </div>
         <div className="app-body">
-          <Switch>
+            <Switch>
             <Route exact path="/" component={Home}></Route>           
             <PrivateRoute path="/profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Profile}></PrivateRoute>
@@ -90,13 +93,16 @@ class App extends Component {
               component={EditProfile}></PrivateRoute>
             <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Friends}></PrivateRoute>
+              
+            <PrivateRoute path="/calendar" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+              component={CalendarComp}></PrivateRoute>
             <Route path="/login"
               render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/signup"
               render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>  
             <Route component={NotFound}></Route>
-          </Switch>
+            </Switch>
         </div>
         <Alert stack={{limit: 3}} 
           timeout = {3000}

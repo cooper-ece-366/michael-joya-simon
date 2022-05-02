@@ -155,7 +155,7 @@ class EditProfile extends Component {
                         <div className = "select-edit"><Select id = "select-inner" options={options} isMulti onChange = {this.changeHandlerSkills} defaultValue = {skillsDefault}/></div>
                     </div> 
 
-                    <div className = "field"><h3>Biography:</h3>
+                    <div className = "field"><h3>Tell Us About Yourself:</h3>
                         <textarea className = "textareas"
                             name="bio"  
                             onChange={this.changeHandler}

@@ -1,0 +1,41 @@
+@font-face {
+    font-family: trakya1;
+    src: local("trakya1"),
+         url("trakya1.otf")
+}
+
+@font-face {
+    font-family: trakya2;
+    src: local("trakya2"),
+         url("trakya2.otf")
+}
+
+@font-face {
+    font-family: calif;
+    src: local("calif"),
+         url("calif.ttf")
+}
+
+@font-face { 
+    font-family: Radio Canada;
+    src: local("RadioCanada-Regular"),
+          url("RadioCanada-Regular.ttf")
+}
+
+@font-face { 
+    font-family: Poppins;
+    src: local("Poppins-Regular"),
+          url("Poppins-Regular.ttf")
+}
+
+@font-face { 
+    font-family: Poppins-semibold;
+    src: local("Poppins-SemiBold"),
+          url("Poppins-SemiBold.ttf")
+}
+
+@font-face { 
+    font-family: Poppins-bold;
+    src: local("Poppins-bold"),
+          url("Poppins-Bold.ttf")
+}

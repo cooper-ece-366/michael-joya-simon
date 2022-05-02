@@ -11,9 +11,15 @@
 .request{
     display:flex;
     height: 120px;
+    transition: width 1s, height 1s, transform 1s;
+    border-radius: 100px;
+    justify-content:space-evenly;
+    font-family: 'Radio Canada', sans-serif;
 }
 .request:hover{
-    background-color: darkgray;
+    border-radius: 10px;
+    background-color: #6a4caf;
+    transition: all 0.6s ease-in-out;
 }
 
 .imagetext{
@@ -26,4 +32,9 @@
 }
 .name{
     text-transform: capitalize;
+}
+
+.request:hover .imagetext{ 
+    color:rgb(211, 211, 211);
+    transition: all 0.7s ease-in-out;
 }

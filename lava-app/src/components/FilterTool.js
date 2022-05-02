@@ -68,7 +68,7 @@ class Filter extends Component {
 
   render() { 
     return(
-    <div className = "filter-total">
+    <div className = "filter-total" style = {{height:"100vh"}}>
     <div className = "form-total">
     <br/><br/><br/>
     <h2 className = "head">Find Study Buddies</h2>

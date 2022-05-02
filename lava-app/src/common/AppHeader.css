@@ -2,13 +2,16 @@
     height: 60px;
     position: relative;
     z-index: 10;
+    background: #121212;
 }
+
 
 .app-title {
     line-height: 60px;
     vertical-align: middle;
     font-size: 1.35em;
-    color: orange;
+    color: rgba(55, 186, 226, 0.7);
+    font-family:'Radio Canada';
 }
 
 .app-branding {
@@ -36,13 +39,15 @@
     vertical-align: middle;
     padding-left: 15px;
     padding-right: 15px;
-    color: rgba(0,0,0,0.65);
+    background-color:linear-gradient(#2c3e50,#1abc9c,#e74c3c,#9b59b6);
+    font-family:'Radio Canada';
 }
 
+
 .app-nav ul li a:hover {
-    color: orange;
+    color: #1abc9c;
 }
 
 .app-nav ul li a.active {
-    color: orange;
+    color: #1abc9c;
 }
