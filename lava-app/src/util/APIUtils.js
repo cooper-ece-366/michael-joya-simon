@@ -139,3 +139,70 @@ export function postDelete(id) {
         method: 'GET'
     })
 }
+
+export function addMeeting(data) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/add",
+        method: 'POST',
+        body: JSON.stringify(data)
+    });
+}
+
+export function getMeetingOutgoing() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/outgoing",
+        method: 'GET'
+    })
+}
+
+export function getMeetingIncoming() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/incoming",
+        method: 'GET'
+    })
+}
+
+export function getMeetingScheduled() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/meet",
+        method: 'GET'
+    })
+}
+
+export function acceptMeeting(input) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/accept/" + input,
+        method: 'GET'
+    })
+}
+
+export function removeMeeting(input) {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/meeting/remove/" + input,
+        method: 'GET'
+    })
+}
