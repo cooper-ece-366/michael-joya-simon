@@ -248,8 +248,9 @@ class CalendarComp extends Component {
                         <div className = "pop-up">{popup}</div>
 
                     </div>
+                    
                     <div className = "scheduler-calendar">
-                        <h2 className = "cal-titles">Your Calendar</h2>
+                    <h2 className = "cal-titles">Your Calendar</h2>
                         <BigCalendar
                             startAccessor="start"
                             endAccessor="end"
@@ -282,6 +283,7 @@ class CalendarComp extends Component {
                                     style:newStyle
                             }}}
                         />
+                        <br class="clear" />;
                     </div>
                     <div>
                         

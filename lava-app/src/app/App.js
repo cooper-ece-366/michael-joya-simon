@@ -93,6 +93,7 @@ class App extends Component {
               component={EditProfile}></PrivateRoute>
             <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Friends}></PrivateRoute>
+              
             <PrivateRoute path="/calendar" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={CalendarComp}></PrivateRoute>
             <Route path="/login"
