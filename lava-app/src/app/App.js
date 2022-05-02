@@ -12,6 +12,7 @@ import EditProfile from '../components/EditProfile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
 import Filter from '../components/FilterTool';
 import Friends from '../components/Friends';
+import CalendarComp from '../components/Calendar';
 import NotFound from '../common/NotFound';
 import LoadingIndicator from '../common/LoadingIndicator';
 import { getCurrentUser } from '../util/APIUtils';
@@ -90,6 +91,8 @@ class App extends Component {
               component={EditProfile}></PrivateRoute>
             <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
               component={Friends}></PrivateRoute>
+            <PrivateRoute path="/calendar" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+              component={CalendarComp}></PrivateRoute>
             <Route path="/login"
               render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/signup"
