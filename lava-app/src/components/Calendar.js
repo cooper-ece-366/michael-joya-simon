@@ -212,7 +212,7 @@ class CalendarComp extends Component {
 
         return (<div className = "total-calender">
                     <div className = "form-calendar">
-                        <h2 className = "cal-titles">Create New Invite</h2>
+                        <div className = "cal-form-title">Create New Invite</div>
                         <div className = "grid-for-form">
                             <div className = "choose-friend">
                                 <h4>Choose Friend:</h4>
@@ -250,7 +250,7 @@ class CalendarComp extends Component {
                     </div>
                     
                     <div className = "scheduler-calendar">
-                    <h2 className = "cal-titles">Your Calendar</h2>
+                    <div className = "cal-titles">Your Calendar</div>
                         <BigCalendar
                             startAccessor="start"
                             endAccessor="end"
@@ -283,7 +283,7 @@ class CalendarComp extends Component {
                                     style:newStyle
                             }}}
                         />
-                        <br class="clear" />;
+                        
                     </div>
                     <div>
                         
