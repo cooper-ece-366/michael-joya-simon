@@ -18,7 +18,7 @@ class Home extends Component {
                         </div>
                         <button className="explore-button">Explore Lava</button>
                         </div> 
-                    </div> 
+                </div> 
                 <div className="container">
                     <div className = "lavagif">
                     {/*<div className="graf-bg-container">
@@ -38,6 +38,11 @@ class Home extends Component {
                         </div> 
                     </div> */}
                     </div>    
+                </div>
+                <div className = "home-desc">
+                    <p>Find your community <br></br>
+                    Found your own</p>
+                    <button className = "check-button">Check Out More</button>
                 </div>
             </div>
         )
