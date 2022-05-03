@@ -32,14 +32,16 @@
 
 
 .scheduler-calendar {
-    margin:auto;
     margin: 50px;
-    height: 700px;
+    height: 760px;
+    min-width: 40%;
     width: 60%;
     display: inline-block;
     vertical-align: top;
-    
+    background:rgb(70, 70, 70);
+    border-radius:40px;
 }
+
 
 .modal_content {
     background-color: white;
@@ -47,15 +49,17 @@
 }
 .cal-form-title { 
     font-family: Radio Canada;
+    font-size: 20px;
 }
 .cal-titles {
     margin: auto;
     width: 300px;
-    margin-bottom: 50px;
     text-align: center;
     color: white;
     background-color: #616161;
     padding: 10px;
+    margin-top: 20px;
+    margin-bottom:20px;
     border-radius: 10px;
 }
 
@@ -72,8 +76,10 @@
     border-radius: 10px;
 }
 
+
 .submit-meeting-req-button:hover {
     cursor: pointer;
+    transform: scale(0.98);
 }
 
 .cal-input {
@@ -87,12 +93,15 @@
 }
 
 .rbc-calendar { 
-    height:700px;
+    max-height:600px;
+    max-width:calc(100%-70%);
     background: white;
+    border: 2px solid rgba(124, 124, 124, 0.07);
     box-shadow: 0 0 2px rgba(124, 124, 124, 0.07), 
     0 0 4px rgba(124, 124, 124, 0.07), 
     0 0 8px rgba(124, 124, 124, 0.07), 
     0 0 16px rgba(124, 124, 124, 0.07),
     0 0 32px rgba(124, 124, 124, 0.07), 
-    0 0 64px rgba(124, 124, 124, 0.07);
+    0 0 64px rgba(124, 124, 124, 0.07),
+    0 0 128px rgba(124, 124, 124, 0.07);
 }

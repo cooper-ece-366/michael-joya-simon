@@ -39,12 +39,13 @@
     border: none;
 }
 
-.exit-but:hover {
-    cursor: pointer;
+.exit-but:hover{ 
+    cursor:pointer;
+    transform:scale(1.01);
 }
 
 .remove-meet {
-    background-color: rgb(255, 87, 45);
+    background-color:indianred;
     color: white;
     border: none;
     padding: 10px;
@@ -54,6 +55,7 @@
 
 .remove-meet:hover {
     cursor: pointer;
+    transform:scale(0.95);
 }
 
 .accept-meet {

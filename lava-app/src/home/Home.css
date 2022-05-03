@@ -118,9 +118,11 @@
     letter-spacing:1px;
     font-family:'Poppins-Bold';
     cursor:pointer;
+    
 }
 
 .explore-button:hover {
+    cursor:pointer;
     transform: scale(1.01);
 }
 .graf-bg-container {
