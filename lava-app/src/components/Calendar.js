@@ -210,7 +210,7 @@ class CalendarComp extends Component {
             popup = (<Popup message= {this.state.idd} closeMe={this.closePopupHandler}/>);
         } 
 
-        return (<div className = "total-calender">
+        return (<div className = "total-calendar">
                     <div className = "form-calendar">
                         <div className = "cal-form-title">Create New Invite</div>
                         <div className = "grid-for-form">
