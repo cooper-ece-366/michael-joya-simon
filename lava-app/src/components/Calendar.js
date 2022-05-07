@@ -210,7 +210,7 @@ class CalendarComp extends Component {
             popup = (<Popup message= {this.state.idd} closeMe={this.closePopupHandler}/>);
         } 
 
-        return (<div className = "total-calendar">
+        return (<div className = "total-calendar" style={{height:"100vh"}}>
                     <div className = "form-calendar">
                         <div className = "cal-form-title">Create New Invite</div>
                         <div className = "grid-for-form">

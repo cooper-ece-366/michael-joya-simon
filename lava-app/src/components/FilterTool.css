@@ -1,7 +1,7 @@
 .head { 
     color : white;
     text-align: center;
-    background-color: #018786;
+    background-color:#6a64af;
     margin: auto;
     width: 40%;
     min-width: 400px;
@@ -68,7 +68,7 @@
 .suggested {
     color : white;
     text-align: center;
-    background-color: #018786;
+    background-color:#6a64af;
     margin: auto;
     border-radius: 10px;
     padding: 20px;
@@ -121,8 +121,8 @@
 .card:hover {
     width: 100%;
     height: 500px;
-    border-radius: 5px;
-    background-image: radial-gradient(#018786,#CF6679 900%);
+    border-radius: 20px;
+    background-color:#6a64af;
 }
 
 
