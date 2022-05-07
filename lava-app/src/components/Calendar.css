@@ -17,8 +17,8 @@
     vertical-align: top;
     width: calc(100%/5);
     box-sizing:border-box;
-    background: #3b3b3b;
-    padding: 40px;
+    background: #464646;
+    padding: 20px;
     border-radius: 30px;
     border: 1px solid rgb(70, 70, 70);
     box-shadow: 0 0 2px rgba(124, 124, 124, 0.07), 
@@ -27,13 +27,16 @@
                 0 0 16px rgba(124, 124, 124, 0.07),
                 0 0 32px rgba(124, 124, 124, 0.07), 
                 0 0 64px rgba(124, 124, 124, 0.07);
+    color: rgb(15,15,15);
+}
+
+.cal-form-title {
     color: rgb(196, 104, 104);
 }
 
-
 .scheduler-calendar {
     margin: 50px;
-    height: 760px;
+    height: 720px;
     min-width: 40%;
     width: 60%;
     display: inline-block;
@@ -41,7 +44,6 @@
     background:rgb(70, 70, 70);
     border-radius:40px;
 }
-
 
 .modal_content {
     background-color: white;

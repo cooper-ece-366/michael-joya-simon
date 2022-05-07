@@ -1,26 +1,53 @@
 .home-container {
     text-align: center;
-    min-height: 100vh;
+    max-height: calc(100vh-60px);
     overflow:auto;
     position: relative;
-    
+    z-index: 1;
+    animation: introfade 1.3s reverse;
+}
+
+@keyframes introfade { 
+    from {opacity:100%}
+    to {opacity:0;}
+}
+
+.about-container { 
+    z-index: 0;
+    opacity: 1;
+    animation: about 1.0s ease-in;
+}
+@keyframes about { 
+    from { 
+        z-index: 0;
+    }
+    to { 
+        z-index: 2;
+        opacity: 1;
+    }
+}
+
+.about-container .explore-button:active {
+    animation: about 1.0s ease-in;
+}
+.lavag { 
     background: #000;
     background-image: url(./lavatestgif.gif);
     background-repeat: no-repeat;
     background-position:center;
-    height:500px;
+    min-height:100vh;
     color:#fff;
     background-color:#000;
     background-size:50%;
     padding: 0 8%;
-    transform: translateY(-100px);
 }
+
 .lava-title {
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:70px;
-    margin-top:13%; 
+    font-size:80px;
+    margin-top:5%; 
     text-align:left;
     margin-left:10%;
     
@@ -32,38 +59,39 @@
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:60px; 
+    font-size:57px; 
     overflow: hidden;
     white-space: nowrap;
     width: 0;
     border-right: transparent;
     animation: typing1 1s steps(30,end) forwards alternate;
-    animation-delay: 300ms;
+    animation-delay: 700ms;
 }
 .home-title2 {
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:60px; 
+    font-size:57px; 
     white-space: nowrap;
     overflow:hidden;
     width: 0;
     animation: typing2 1.4s steps(30,end) forwards alternate;
-    animation-delay: 800ms;
+    animation-delay: 1200ms;
     border-right: .1em solid transparent;
 }
 .home-title3 {
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:60px; 
+    font-size:57px; 
     overflow:hidden;
     white-space: nowrap;
     width: 0;
     border-right: transparent;
     animation: typing3 1.2s steps(30,end) forwards alternate;
-    animation-delay: 1300ms;
+    animation-delay: 1700ms;
 }
+
 
 .home-title-container {
     display:inline-block;
@@ -103,27 +131,51 @@
 .container { 
     min-height: fit-content;
 }
-.lavagif {
-    overflow:hidden;  
-}
+
 .explore-button {
     background:#393939;
     border: 0;
     outline: none;
     padding: 15px 35px;
+    border-radius:10px;
+    background:#121212;
+    font-size: 20px;
     color: #fff;
     margin-top: 50px;
     margin-left: 75px;
     font-weight:500;
     letter-spacing:1px;
     font-family:'Poppins-Bold';
-    cursor:pointer;
 }
 
-.explore-button:hover {
+.explore-button:hover{
     cursor:pointer;
-    transform: scale(1.01);
+    transform: scale(0.99);
+    animation: colorflow 20s ease-in-out alternate;
 }
+
+@keyframes colorflow {
+    0% {
+    background: #121212;
+    }
+    10% {
+    color:rgb(148, 73, 89);
+    background:rgb(201, 201, 201);
+    }
+}
+
+
+.more-text { 
+    position: inline-block;
+    left:0%;
+    width: 100%;
+    margin-top: 10%;
+    min-width: 250px;
+    font-family:'Poppins-Bold';
+    font-size: 30px;
+    
+}
+
 .home-desc {
     position: absolute;
     width: 25%;
@@ -134,11 +186,11 @@
     bottom:20%;
 }
 .check-button { 
-    background:#393939;
+    background:#000;
     border: 0;
     outline: none;
     padding: 15px 35px;
-    color: #fff;
+    color: #000;
     font-weight:500;
     letter-spacing:1px;
     font-family:'Poppins-Bold';
@@ -147,7 +199,15 @@
 
 check-button:hover{ 
     cursor:pointer;
-    transform: scale(1.01);
+    transform: scale(1.02);
+}
+
+.bottom-text { 
+    font-family:Arial, Helvetica, sans-serif;
+    float:right;
+    padding: 5px;
+    font-size:10px;
+    color:rgba(255, 255, 255, 0.507);
 }
 .graf-bg-container {
     width: 100%;

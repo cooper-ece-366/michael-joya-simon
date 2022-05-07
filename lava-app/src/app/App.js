@@ -114,6 +114,7 @@ class App extends Component {
               render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}>
                 <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
               </Route>
+              
             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}>
               <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} /></Route>  
             <Route component={NotFound}></Route>
