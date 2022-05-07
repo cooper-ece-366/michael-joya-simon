@@ -13,11 +13,17 @@
     color: rgba(55, 186, 226, 0.7);
     font-family:'Radio Canada';
 }
-
+.app-title-text{ 
+    margin-left:55px;
+}
 .app-branding {
     float: left;
+    background-image:url('../home/lavacubedark.gif');
+    background-repeat: no-repeat;
 }
-
+.app-logo {
+    background-image:url('../home/lavacubedark.gif')
+}
 
 .app-options {
     float: right;

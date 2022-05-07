@@ -10,7 +10,7 @@ class Profile extends Component {
     }
     render() {
         return (
-            <div className="profile-container">
+            <div className="profile-container" style={{height:"100vh"}}>
                 <div className="container">
                     <div className="profile-info">
                         <div className="profile-avatar">

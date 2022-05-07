@@ -16,7 +16,12 @@ class AppHeader extends Component {
             <header className="app-header">
                 <div className="container">
                     <div className="app-branding">
+                        <div className = "app-logo">
+
+                        </div>
+                        <div className = "app-title-text">
                         <Link to="/" className="app-title">Lava</Link>
+                        </div>
                     </div>
                     <div className="app-options">
                         <nav className="app-nav">

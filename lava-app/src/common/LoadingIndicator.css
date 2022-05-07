@@ -1,25 +1,22 @@
-.body {
+
+.loading-container {
+    background: #1c1c1c;
+    background-repeat: no-repeat;
+    background-position:center;
+    width:100%;
     overflow:hidden;
+    z-index:1;
+    background-image: url(../home/elevategif.gif)
 }
 .load-text {
     position:relative;
-    top: 200px;
+    top: 80%;
+    color: rgb(255,255,255,0.5);
     text-align: center;
     font-size: large;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.loading-indicator {
-    position: absolute;
-    display: flex;
-    padding: 100px; 
-    align-items: center;
-    background: rgb(255, 255, 255);
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%,50%) rotate(0deg);
-    animation: rotate 20s linear infinite;
-    filter: blur(10px) contrast(15);
-}
+
 
 @keyframes rotate {
     from {
