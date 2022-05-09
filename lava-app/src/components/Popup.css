@@ -1,34 +1,49 @@
 .overall-popup-outgoing {
     background: white;
-    border: 5px rgb(255, 207, 119) solid;
     border-radius: 10px;
-    background-color: rgb(255, 207, 119);
-    position: 'fixed';
+    background-color: orange;
+    position: fixed;
     margin: auto;
     min-height: 150px;
-    width: 500px;
+    min-width: 500px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.memo-popup {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.memo-popup-value {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(35, 22, 78);
 }
 
 .overall-popup-incoming {
     background: white;
-    border: 5px rgb(74, 201, 218) solid;
     border-radius: 10px;
-    background-color: rgb(74, 201, 218);
-    position: 'fixed';
+    background-color: #9854fd;
+    position: fixed;
     margin: auto;
-    height: 150px;
-    width: 600px;
+    min-height: 150px;
+    min-width: 500px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .overall-popup {
     background: white;
-    border: 5px lightgreen solid;
     border-radius: 10px;
     background-color: lightgreen;
-    position: 'fixed';
+    position: fixed;
     margin: auto;
-    height: 150px;
-    width: 600px;
+    min-height: 150px;
+    min-width: 500px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .exit-but {
@@ -51,11 +66,17 @@
     padding: 10px;
     border-radius: 8px;
     margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .remove-meet:hover {
     cursor: pointer;
     transform:scale(0.95);
+}
+
+.meeting-person {
+    color: rgba(255, 255, 255, 0.883);
+    font-size: 24px;
 }
 
 .accept-meet {
@@ -65,8 +86,11 @@
     padding: 10px;
     border-radius: 8px;
     margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 .accept-meet:hover {
     cursor: pointer;
+    transform:scale(0.95);
 }

@@ -38,6 +38,8 @@
 
 .cal-form-title {
     color: rgb(196, 104, 104);
+    font-weight: bold;
+    font-size: 32px;
 }
 
 .scheduler-calendar {
@@ -73,8 +75,8 @@
 
 .pop-up {
     position: fixed;
-    top: 40%;
-    left: 40%;
+    top: 35%;
+    left: 35%;
     z-index:100;
 }
 
