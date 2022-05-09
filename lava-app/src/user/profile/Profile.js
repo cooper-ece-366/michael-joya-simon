@@ -7,13 +7,20 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         console.log(props);
+        
     }
+
+    nameArr = this.props.currentUser.skillsList.split(',');
+    test = new Date(this.props.currentUser.birthday).toDateString()
+
+
     render() {
         return (
-            <div className="profile-container">
-                <div className="container">
+            <div className="profile-container" style={{height:"100vh"}}>
+                <div className="profile-container-inner">
                     <div className="profile-info">
-                        <div className="profile-avatar">
+                        <div className = "left-div-profile">
+                            <div className="profile-avatar">
                             { 
                                 this.props.currentUser.imageUrl ? (
                                     <img src={this.props.currentUser.imageUrl} alt={this.props.currentUser.name}/>
@@ -23,23 +30,32 @@ class Profile extends Component {
                                     </div>
                                 )
                             }
-                        </div>
-                        <div className="profile-name">
-                           <h2>{this.props.currentUser.name}</h2>
-                           <p className="profile-email">{this.props.currentUser.email}</p>
-                           <div className= "profile-stats">
-                                DOB: {this.props.currentUser.birthday}<br/>
-                                Skills: {this.props.currentUser.skillsList}<br/>
-                                Location: {this.props.currentUser.stateLocated}<br/>
-                                Occupation: {this.props.currentUser.career}<br/>
-                                <br></br>
-                                Biography: <br></br>{this.props.currentUser.bio}<br/>
                             </div>
+                            <h2 className = "name-in-profile">{this.props.currentUser.name}</h2>
+                            <p className="profile-email">{this.props.currentUser.email}</p>
                         </div>
+                        <div className = "right-div-profile">
+                            <div className="profile-name"> 
+                                <div className= "profile-stats">
+                                    <div className = "indiv-stat-header">Birthday</div>
+                                    <div className = "profile-indiv-stat">{this.test}<br/></div>
+                                    <div className = "indiv-stat-header">Skills</div>
+                                    <div className = "profile-skills-list">{this.nameArr.map((val) => {
+                                        return(<div className = "skills-text">{val}</div>)
+                                    })}
+                                    <br/></div>
+                                    <div className = "indiv-stat-header">Career</div>
+                                    <div className = "profile-indiv-stat">{this.props.currentUser.career}<br/></div>
+                                    <div className = "indiv-stat-header">State</div>
+                                    <div className = "profile-indiv-stat">{this.props.currentUser.stateLocated}<br/></div>
+                                <div className = "indiv-stat-header">About Me</div>
+                                <div>{this.props.currentUser.bio}</div><br/>
+                                </div>
+                            </div>
                         
-                        <button className = "edit-button">
-                            <NavLink to="/editProfile" className = "edit-words">Edit</NavLink>
-                        </button>
+
+                                <div className = "edit-container"><NavLink to="/editProfile" className = "edit-words">Edit</NavLink></div>
+                        </div>
                     </div>
                     
                     

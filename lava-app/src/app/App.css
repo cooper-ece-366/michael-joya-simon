@@ -11,10 +11,5 @@
 }
 
 .app-body { 
-    background:#121212;
-    height: 100vh;
-}
-
-.tmp-cal {
-    background:white;
+    background: black;
 }

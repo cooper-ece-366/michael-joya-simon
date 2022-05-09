@@ -1,46 +1,216 @@
 .home-container {
     text-align: center;
-    min-height: calc(100vh - 60px);
-    overflow: auto;
+    max-height: calc(100vh-60px);
+    overflow:auto;
     position: relative;
-    padding-top: 60px;
-    background: #000;
+    z-index: 1;
+    animation: introfade 1.3s reverse;
 }
 
-.home-title {
-    font-size: 25px;
+@keyframes introfade { 
+    from {opacity:100%}
+    to {opacity:0;}
+}
+
+.about-container { 
+    z-index: 0;
+    opacity: 1;
+    animation: about 1.0s ease-in;
+}
+@keyframes about { 
+    from { 
+        z-index: 0;
+    }
+    to { 
+        z-index: 2;
+        opacity: 1;
+    }
+}
+
+.about-container .explore-button:active {
+    animation: about 1.0s ease-in;
+}
+.lavag { 
+    background: #000;
+    background-image: url(./lavatestgif.gif);
+    background-repeat: no-repeat;
+    background-position:center;
+    min-height:100vh;
+    color:#fff;
+    background-color:#000;
+    background-size:50%;
+    padding: 0 8%;
+}
+
+.lava-title {
     font-weight: 400;
-    color: rgba(55, 186, 226, 0.7);
-    margin-top: 50px; 
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:80px;
+    margin-top:5%; 
+    text-align:left;
+    margin-left:10%;
+    
+}
+.home-titles {
+    text-align:left;
+}
+.home-title1 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    border-right: .15em solid rgb(156, 48, 71);
+    border-right: transparent;
+    animation: typing1 1s steps(30,end) forwards alternate;
     animation-delay: 700ms;
-    animation: typing 3s steps(20,end) forwards infinite alternate;
-    font-family: 'RadioCanada', sans-serif;
 }
+.home-title2 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
+    white-space: nowrap;
+    overflow:hidden;
+    width: 0;
+    animation: typing2 1.4s steps(30,end) forwards alternate;
+    animation-delay: 1200ms;
+    border-right: .1em solid transparent;
+}
+.home-title3 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
+    overflow:hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: transparent;
+    animation: typing3 1.2s steps(30,end) forwards alternate;
+    animation-delay: 1700ms;
+}
+
 
 .home-title-container {
     display:inline-block;
+    width:100%;
 }
 .white-space {
     color:#000;
 }
 
-@keyframes typing {
-    0% {width: 0}
-    10% {width: 30%}
-    20% {width: 60%}
-    30% {width: 90%}
-    33% {width: 100%}
-    100% {width: 100%}
+@keyframes typing1 {
+    0% {margin-left: 3%;width: 3%; border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 4%;width: 6%; border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 5%;width: 9%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 5%;width: 12%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 18%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
 }
-.lavagif {
-    overflow:hidden;
-    background-image: url(https://i.imgur.com/euQPPiK.gif);
-    background-repeat: no-repeat;
-    background-position: center;
+@keyframes typing2 {
+    0% {margin-left: 2%;width: 5%; border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 3%;width: 10%;border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 4%;width: 16%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 5%;width: 19%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 23%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 28%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
+}
+@keyframes typing3 {
+    0% {margin-left: 1%;width: 3%;border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 2%;width: 5%;border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 3%;width: 8%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 4%;width: 11%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 13%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
+}
+.container { 
+    min-height: fit-content;
+}
+
+.explore-button {
+    background:#393939;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    border-radius:10px;
+    background:#121212;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 50px;
+    margin-left: 75px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-family:'Poppins-Bold';
+}
+
+.explore-button:hover{
+    cursor:pointer;
+    transform: scale(0.99);
+    animation: colorflow 20s ease-in-out alternate;
+}
+
+@keyframes colorflow {
+    0% {
+    background: #121212;
+    }
+    10% {
+    color:rgb(148, 73, 89);
+    background:rgb(201, 201, 201);
+    }
+}
+
+
+.more-text { 
+    position: inline-block;
+    left:0%;
+    width: 100%;
+    margin-top: 10%;
+    min-width: 250px;
+    font-family:'Poppins-Bold';
+    font-size: 30px;
+    
+}
+
+.home-desc {
+    position: absolute;
+    width: 25%;
+    min-width: 250px;
+    font-family:'Poppins-Bold';
+    font-size: 30px;
+    right: 12%;
+    bottom:20%;
+}
+.check-button { 
+    background:#000;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    color: #000;
+    font-weight:500;
+    letter-spacing:1px;
+    font-family:'Poppins-Bold';
+    cursor:pointer;
+}
+
+check-button:hover{ 
+    cursor:pointer;
+    transform: scale(1.02);
+}
+
+.bottom-text { 
+    position: absolute;
+    font-family:Arial, Helvetica, sans-serif;
+    float:right;
+    padding: 5px;
+    font-size:10px;
+    bottom: 0%;
+    right: 100%;
+    color:rgba(255, 255, 255, 0);
 }
 .graf-bg-container {
     width: 100%;

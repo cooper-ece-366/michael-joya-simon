@@ -210,9 +210,9 @@ class CalendarComp extends Component {
             popup = (<Popup message= {this.state.idd} closeMe={this.closePopupHandler}/>);
         } 
 
-        return (<div className = "total-calender">
+        return (<div className = "total-calendar" style={{height:"100vh"}}>
                     <div className = "form-calendar">
-                        <h2 className = "cal-titles">Create New Invite</h2>
+                        <div className = "cal-form-title">Create New Invite</div>
                         <div className = "grid-for-form">
                             <div className = "choose-friend">
                                 <h4>Choose Friend:</h4>
@@ -250,7 +250,7 @@ class CalendarComp extends Component {
                     </div>
                     
                     <div className = "scheduler-calendar">
-                    <h2 className = "cal-titles">Your Calendar</h2>
+                    <div className = "cal-titles">Your Calendar</div>
                         <BigCalendar
                             startAccessor="start"
                             endAccessor="end"
@@ -271,10 +271,10 @@ class CalendarComp extends Component {
                                 }
                           
                                 if (event.status == 0){
-                                    newStyle.backgroundColor = "rgb(255, 207, 119)"
+                                    newStyle.backgroundColor = "orange"
                                 }
                                 else if (event.status == 1) {
-                                    newStyle.backgroundColor = "rgb(74, 201, 218)"
+                                    newStyle.backgroundColor = "#9854fd"
                                 }
                                 else {
                                     newStyle.backgroundColor = "lightgreen"
@@ -283,7 +283,7 @@ class CalendarComp extends Component {
                                     style:newStyle
                             }}}
                         />
-                        <br class="clear" />;
+                        
                     </div>
                     <div>
                         

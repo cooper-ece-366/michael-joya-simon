@@ -2,7 +2,7 @@
     height: 60px;
     position: relative;
     z-index: 10;
-    background: #121212;
+    background: black;
 }
 
 
@@ -14,8 +14,33 @@
     font-family:'Radio Canada';
 }
 
+.app-title:hover{ 
+    color:#6a64af;
+    animation: colorFlow1 4s ease-in-out reverse;
+}
+
+@keyframes colorFlow1 {
+    0%{
+    color:#6a64af;
+    }
+    5% {
+    color: #121212;
+    }
+    10% {
+    color:rgb(148, 73, 89);
+    }
+}
+
+.app-title-text{ 
+    margin-left:57px;
+}
 .app-branding {
     float: left;
+    background-image:url('../home/lavacubedark.gif');
+    background-repeat: no-repeat;
+}
+.app-logo {
+    background-image:url('../home/lavacubedark.gif')
 }
 
 .app-options {
@@ -40,12 +65,25 @@
     padding-left: 15px;
     padding-right: 15px;
     background-color:linear-gradient(#2c3e50,#1abc9c,#e74c3c,#9b59b6);
-    font-family:'Radio Canada';
+    font-family:'Radio Canada'; 
+    
 }
-
 
 .app-nav ul li a:hover {
     color: #1abc9c;
+    animation: colorFlow2 10s ease-in-out reverse;
+}
+
+@keyframes colorFlow2 {
+    0%{
+    color:#6a64af;
+    }
+    5% {
+    color: #1abc9c;;
+    }
+    10% {
+    color:rgb(148, 73, 89);
+    }
 }
 
 .app-nav ul li a.active {

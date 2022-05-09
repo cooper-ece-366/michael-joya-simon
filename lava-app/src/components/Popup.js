@@ -19,8 +19,9 @@ if(props.message.status == 0)
     return (
         <div className = "overall-popup-outgoing">
             <button onClick={props.closeMe} className = "exit-but">Close</button>
-            <h3>Outgoing Meetup Request to: {props.message.title}</h3>
-            <p>Memo: {props.message.memo}</p>
+            <h3 className = "meeting-person">Outgoing Meetup Request to: {props.message.title}</h3>
+            <div className = "memo-popup">Memo</div>
+            <div className = "memo-popup-value">{props.message.memo}</div>
             <button onClick = {remove} className = "remove-meet">Remove</button>
           
         </div>
@@ -29,8 +30,9 @@ if(props.message.status == 0)
 else if(props.message.status == 1) {
     return (<div className = "overall-popup-incoming">
             <button onClick={props.closeMe} className = "exit-but">Close</button>
-            <h3>Incoming Meeting Request from: {props.message.title}</h3>
-            <p>Memo: {props.message.memo}</p>
+            <h3 className = "meeting-person">Incoming Meeting Request from: {props.message.title}</h3>
+            <div className = "memo-popup">Memo</div>
+            <div className = "memo-popup-value">{props.message.memo}</div>
             <button onClick = {accept} className = "accept-meet">Accept</button>
             <button onClick = {remove} className = "remove-meet">Remove</button>
             
@@ -40,8 +42,9 @@ else if(props.message.status == 1) {
 else  {
     return (<div className = "overall-popup">
             <button onClick={props.closeMe} className = "exit-but">Close</button>
-            <h3>Scheduled Meetup: {props.message.title}</h3>
-            <p>Memo: {props.message.memo}</p>
+            <h3 className = "meeting-person">Scheduled Meetup: {props.message.title}</h3>
+            <div className = "memo-popup">Memo</div>
+            <div className = "memo-popup-value">{props.message.memo}</div>
             <button onClick = {remove} className = "remove-meet">Remove</button>
             
             </div>

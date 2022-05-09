@@ -7,6 +7,7 @@ import AppHeader from '../common/AppHeader';
 import Home from '../home/Home';
 import Login from '../user/login/Login';
 import Signup from '../user/signup/Signup';
+import About from '../components/about';
 import Profile from '../user/profile/Profile';
 import EditProfile from '../components/EditProfile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
@@ -80,27 +81,44 @@ class App extends Component {
     return (
       <div className="app" style={{height:"100vh"}}>
         <div className="app-top-box">
-          <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
-            </div>
+        <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+        </div>
         <div className="app-body">
             <Switch>
             <Route exact path="/" component={Home}></Route>           
             <PrivateRoute path="/profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-              component={Profile}></PrivateRoute>
+              component={Profile}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </PrivateRoute>
             <PrivateRoute path="/find" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-              component={Filter}></PrivateRoute>
+              component={Filter}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </PrivateRoute>
             <PrivateRoute path="/editProfile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-              component={EditProfile}></PrivateRoute>
+              component={EditProfile}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </PrivateRoute>
             <PrivateRoute path="/studybuddies" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-              component={Friends}></PrivateRoute>
+              component={Friends}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </PrivateRoute>
               
             <PrivateRoute path="/calendar" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-              component={CalendarComp}></PrivateRoute>
+              component={CalendarComp}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </PrivateRoute>
             <Route path="/login"
-              render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
+              render={(props) => <Login authenticated={this.state.authenticated} {...props} />}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </Route>
             <Route path="/signup"
-              render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}></Route>
-            <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>  
+              render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}>
+                <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
+              </Route>
+
+            <Route path = "/about" component={About}></Route>
+            <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}>
+              <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} /></Route>  
             <Route component={NotFound}></Route>
             </Switch>
         </div>
