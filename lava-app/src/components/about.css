@@ -12,24 +12,6 @@
     to {opacity:0;}
 }
 
-.about { 
-    z-index: 0;
-    opacity: 1;
-    animation: about 1.0s ease-in;
-}
-@keyframes about { 
-    from { 
-        z-index: 0;
-    }
-    to { 
-        z-index: 2;
-        opacity: 1;
-    }
-}
-
-.about-container .explore-button:active {
-    animation: about 1.0s ease-in;
-}
 .desc-back { 
     background: #000;
     background-image: url(../home/elevategif.gif);
@@ -96,37 +78,6 @@
 .about-title-container {
     display:inline-block;
     width:100%;
-}
-.white-space {
-    color:#000;
-}
-
-@keyframes typing4 {
-    0% {margin-left: 3%;width: 3%; border-right: .1em solid rgb(156, 48, 71);}
-    20% {margin-left: 4%;width: 6%; border-right: .1em solid rgb(156, 48, 71);}
-    40% {margin-left: 5%;width: 9%;border-right: .1em solid rgb(156, 48, 71);}
-    60% {margin-left: 5%;width: 12%;border-right: .1em solid rgb(156, 48, 71);}
-    80% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {margin-left: 5%;width: 18%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {}
-}
-@keyframes typing5 {
-    0% {margin-left: 2%;width: 5%; border-right: .1em solid rgb(156, 48, 71);}
-    20% {margin-left: 3%;width: 10%;border-right: .1em solid rgb(156, 48, 71);}
-    40% {margin-left: 4%;width: 16%;border-right: .1em solid rgb(156, 48, 71);}
-    60% {margin-left: 5%;width: 19%;border-right: .1em solid rgb(156, 48, 71);}
-    80% {margin-left: 5%;width: 23%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {margin-left: 5%;width: 28%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {}
-}
-@keyframes typing6 {
-    0% {margin-left: 1%;width: 3%;border-right: .1em solid rgb(156, 48, 71);}
-    20% {margin-left: 2%;width: 5%;border-right: .1em solid rgb(156, 48, 71);}
-    40% {margin-left: 3%;width: 8%;border-right: .1em solid rgb(156, 48, 71);}
-    60% {margin-left: 4%;width: 11%;border-right: .1em solid rgb(156, 48, 71);}
-    80% {margin-left: 5%;width: 13%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
-    100% {}
 }
 
 .slide-up {
@@ -214,53 +165,7 @@
         margin-top:15%;
     }
 }
-.container { 
-    min-height: fit-content;
-}
 
-.explore-button {
-    background:#393939;
-    border: 0;
-    outline: none;
-    padding: 15px 35px;
-    border-radius:10px;
-    background:#121212;
-    font-size: 20px;
-    color: #fff;
-    margin-top: 50px;
-    margin-left: 75px;
-    font-weight:500;
-    letter-spacing:1px;
-    font-family:'Poppins-Bold';
-}
-
-.explore-button:hover{
-    cursor:pointer;
-    transform: scale(0.99);
-    animation: colorflow 20s ease-in-out alternate;
-}
-
-@keyframes colorflow {
-    0% {
-    background: #121212;
-    }
-    10% {
-    color:rgb(148, 73, 89);
-    background:rgb(201, 201, 201);
-    }
-}
-
-
-.more-text { 
-    position: inline-block;
-    left:0%;
-    width: 100%;
-    margin-top: 10%;
-    min-width: 250px;
-    font-family:'Poppins-Bold';
-    font-size: 30px;
-    
-}
 
 .alt-desc {
     position: absolute;
@@ -271,17 +176,7 @@
     bottom: 10%;
     right: -10%;
 }
-.check-button { 
-    background:#000;
-    border: 0;
-    outline: none;
-    padding: 15px 35px;
-    color: #000;
-    font-weight:500;
-    letter-spacing:1px;
-    font-family:'Poppins-Bold';
-    cursor:pointer;
-}
+
 
 check-button:hover{ 
     cursor:pointer;
@@ -299,8 +194,6 @@ check-button:hover{
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
-body, html {
-  height: 100vh; }
 
 .desc {
   background: #1c1c1c;
