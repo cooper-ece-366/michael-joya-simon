@@ -16,7 +16,7 @@
     background: #000;
     background-image: url(../home/elevategif.gif);
     background-repeat: no-repeat;
-    background-position:right 25% top 0%;
+    background-position:right 15% top 0%;
     min-height:100vh;
     color:#fff;
     background-color:#1c1c1c;
@@ -103,7 +103,7 @@
 
 @keyframes photoslide { 
     0% {opacity:100%;transform:translateX(50px);}
-    100% {opacity:100%; transform:translateX(1000px);}
+    100% {opacity:100%; transform:translateX(850px);}
     100% {}
 }
 
@@ -186,7 +186,7 @@ check-button:hover{
 .bottom-text2 { 
     position:absolute;
     font-family:Arial, Helvetica, sans-serif;
-    bottom: 0%;
+    bottom: -50px;
     padding: 5px;
     font-size:10px;
     color:rgba(255, 255, 255, 0.507);
@@ -208,7 +208,7 @@ check-button:hover{
   background: rgba(170, 170, 170, 0.3); }
 
 .heading {
-  margin: 80px 0 0 80px;
+  margin: 10px 0 0 80px;
   font-size: 45px;
   width: max-content;
   display: flex;
