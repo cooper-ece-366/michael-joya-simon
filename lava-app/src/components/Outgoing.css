@@ -23,6 +23,7 @@
 }
 
 .imagetext{
+    min-width: 155px;
     display: flex;
     flex-direction: column;
     justify-content: center;
