@@ -271,10 +271,10 @@ class CalendarComp extends Component {
                                 }
                           
                                 if (event.status == 0){
-                                    newStyle.backgroundColor = "rgb(255, 207, 119)"
+                                    newStyle.backgroundColor = "orange"
                                 }
                                 else if (event.status == 1) {
-                                    newStyle.backgroundColor = "rgb(74, 201, 218)"
+                                    newStyle.backgroundColor = "#9854fd"
                                 }
                                 else {
                                     newStyle.backgroundColor = "lightgreen"

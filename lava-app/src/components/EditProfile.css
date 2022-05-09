@@ -74,6 +74,8 @@
     padding: 12px;
     border-radius: 5px;
     border: solid 2px rgb(253, 189, 105);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -84,21 +86,20 @@
     border-radius: 5px;
     border: solid 2px rgb(253, 189, 105);
     max-width: 100%;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.name-input {
+.name-input, .career-input {
     padding: 12px;
     border-radius: 5px;
     border: solid 2px rgb(253, 189, 105);
     width: 250px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.career-input {
-    padding: 12px;
-    border-radius: 5px;
-    border: solid 2px rgb(253, 189, 105);
-    width: 250px;
-}
+
 
 .select-edit {
     width: 100%;
