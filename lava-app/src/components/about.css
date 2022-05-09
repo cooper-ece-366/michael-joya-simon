@@ -1,0 +1,371 @@
+.desc {
+    text-align: center;
+    max-height: calc(100vh-60px);
+    overflow:auto;
+    position: relative;
+    z-index: 1;
+    animation: introfade 1.3s reverse;
+}
+
+@keyframes introfade { 
+    from {opacity:100%}
+    to {opacity:0;}
+}
+
+.about { 
+    z-index: 0;
+    opacity: 1;
+    animation: about 1.0s ease-in;
+}
+@keyframes about { 
+    from { 
+        z-index: 0;
+    }
+    to { 
+        z-index: 2;
+        opacity: 1;
+    }
+}
+
+.about-container .explore-button:active {
+    animation: about 1.0s ease-in;
+}
+.desc-back { 
+    background: #000;
+    background-image: url(../home/elevategif.gif);
+    background-repeat: no-repeat;
+    background-position:right 25% top 0%;
+    min-height:100vh;
+    color:#fff;
+    background-color:#1c1c1c;
+    background-size:40%;
+    padding: 0 8%;
+}
+
+.about-title {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:80px;
+    margin-top:5%; 
+    text-align:left;
+    margin-left:10%;
+    
+}
+.about-titles {
+    text-align:left;
+}
+.about-title1 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: transparent;
+    animation: typing4 1s steps(30,end) forwards alternate;
+    animation-delay: 700ms;
+}
+.about-title2 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
+    white-space: nowrap;
+    overflow:hidden;
+    width: 0;
+    animation: typing5 1.4s steps(30,end) forwards alternate;
+    animation-delay: 1200ms;
+    border-right: .1em solid transparent;
+}
+.about-title3 {
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-family:'Poppins-Bold';
+    font-size:57px; 
+    overflow:hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: transparent;
+    animation: slide-up 1.2s steps(30,end) forwards alternate;
+    animation-delay: 1700ms;
+}
+
+
+.about-title-container {
+    display:inline-block;
+    width:100%;
+}
+.white-space {
+    color:#000;
+}
+
+@keyframes typing4 {
+    0% {margin-left: 3%;width: 3%; border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 4%;width: 6%; border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 5%;width: 9%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 5%;width: 12%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 18%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
+}
+@keyframes typing5 {
+    0% {margin-left: 2%;width: 5%; border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 3%;width: 10%;border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 4%;width: 16%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 5%;width: 19%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 23%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 28%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
+}
+@keyframes typing6 {
+    0% {margin-left: 1%;width: 3%;border-right: .1em solid rgb(156, 48, 71);}
+    20% {margin-left: 2%;width: 5%;border-right: .1em solid rgb(156, 48, 71);}
+    40% {margin-left: 3%;width: 8%;border-right: .1em solid rgb(156, 48, 71);}
+    60% {margin-left: 4%;width: 11%;border-right: .1em solid rgb(156, 48, 71);}
+    80% {margin-left: 5%;width: 13%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {margin-left: 5%;width: 15%;border-right: .1em solid rgb(156, 48, 71);}
+    100% {}
+}
+
+.slide-up {
+  animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both
+}
+  
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px) }
+  100% {
+    transform: translateY(0)}
+}
+.creators {
+    display:inline-flex;
+    min-width:100vw;
+    margin-left: -110%;
+    margin-top: 3%;
+    animation: photoslide 1s steps(40,end) forwards;
+    animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-delay: 7s;
+    opacity: 0%;
+}
+
+@keyframes photoslide { 
+    0% {opacity:100%;transform:translateX(50px);}
+    100% {opacity:100%; transform:translateX(1000px);}
+    100% {}
+}
+
+.michael{ 
+    background-image:url(../home/michael.png);
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    padding: 5px;
+    float:left;
+    margin-right: 5%;
+}
+
+.joya{ 
+    background-image:url(../home/joya.jpg);
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.simon{ 
+    background-image:url(../home/simon.jpg);
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 5%;
+}
+
+.legend { 
+    text-align:left;
+    margin-left:10%;
+}
+
+.m-text{
+    animation: legend-slide 1s forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-delay: 8s;
+}
+.s-text{
+    animation: legend-slide 1s forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-delay: 8.1s;
+}
+.j-text{
+    animation: legend-slide 1s forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-delay: 8.2s;
+}
+
+@keyframes legend-slide {
+    0% {
+        margin-top:-40%; 
+        margin-bottom:0;
+    }
+    100% {
+        margin-bottom:10%;
+        margin-top:15%;
+    }
+}
+.container { 
+    min-height: fit-content;
+}
+
+.explore-button {
+    background:#393939;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    border-radius:10px;
+    background:#121212;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 50px;
+    margin-left: 75px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-family:'Poppins-Bold';
+}
+
+.explore-button:hover{
+    cursor:pointer;
+    transform: scale(0.99);
+    animation: colorflow 20s ease-in-out alternate;
+}
+
+@keyframes colorflow {
+    0% {
+    background: #121212;
+    }
+    10% {
+    color:rgb(148, 73, 89);
+    background:rgb(201, 201, 201);
+    }
+}
+
+
+.more-text { 
+    position: inline-block;
+    left:0%;
+    width: 100%;
+    margin-top: 10%;
+    min-width: 250px;
+    font-family:'Poppins-Bold';
+    font-size: 30px;
+    
+}
+
+.alt-desc {
+    position: absolute;
+    width: 25%;
+    min-width: 250px;
+    font-family:'Spartan';
+    font-size: 30px;
+    bottom: 10%;
+    right: -10%;
+}
+.check-button { 
+    background:#000;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    color: #000;
+    font-weight:500;
+    letter-spacing:1px;
+    font-family:'Poppins-Bold';
+    cursor:pointer;
+}
+
+check-button:hover{ 
+    cursor:pointer;
+    transform: scale(1.02);
+}
+
+.bottom-text2 { 
+    position:absolute;
+    font-family:Arial, Helvetica, sans-serif;
+    bottom: 0%;
+    padding: 5px;
+    font-size:10px;
+    color:rgba(255, 255, 255, 0.507);
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+body, html {
+  height: 100vh; }
+
+.desc {
+  background: #1c1c1c;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Spartan', sans-serif;
+  color: #2d2d2d; }
+
+\::selection {
+  background: rgba(170, 170, 170, 0.3); }
+
+.heading {
+  margin: 80px 0 0 80px;
+  font-size: 45px;
+  width: max-content;
+  display: flex;
+  flex-direction: column; 
+  white-space: pre-line; }
+  .heading > div {
+    overflow: hidden; }
+    .heading > div > p {
+      width: max-content;
+      white-space: nowrap;
+      margin: 0;
+      line-height: 150%; }
+
+.green {
+  color: #32c267;
+    font-size: 60px; }
+
+.span { 
+    font-size: 25px;
+}
+div.heading > div {
+  animation-delay: 0; }
+  div.heading > div:nth-child(2) > p {
+    animation-delay: 1.2s; }
+
+div.heading > div {
+  animation-delay: 0; }
+  div.heading > div:nth-child(3) > p {
+    animation-delay: 2.4s; }
+
+div.heading > div {
+  animation-delay: 0; }
+  div.heading > div:nth-child(4) > p {
+    animation-delay: 3.6s; }
+
+div.heading > div {
+    animation-delay: 0; }
+    div.heading > div:nth-child(5) > p {
+        animation-delay: 5s; }
+
+div.heading > div {
+    animation-delay: 0; }
+    div.heading > div:nth-child(6) > p {
+        animation-delay: 5s; }
+
+.slide-up {
+  animation: slide-up 1s cubic-bezier(0.65, 0, 0.35, 1, 0.35, 0.65) both; }
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px); }
+  100% {
+    transform: translateY(0); } }

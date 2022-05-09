@@ -7,6 +7,7 @@ import AppHeader from '../common/AppHeader';
 import Home from '../home/Home';
 import Login from '../user/login/Login';
 import Signup from '../user/signup/Signup';
+import About from '../components/about';
 import Profile from '../user/profile/Profile';
 import EditProfile from '../components/EditProfile';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
@@ -114,7 +115,8 @@ class App extends Component {
               render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}>
                 <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
               </Route>
-              
+
+            <Route path = "/about" component={About}></Route>
             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}>
               <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} /></Route>  
             <Route component={NotFound}></Route>

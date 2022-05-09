@@ -203,11 +203,14 @@ check-button:hover{
 }
 
 .bottom-text { 
+    position: absolute;
     font-family:Arial, Helvetica, sans-serif;
     float:right;
     padding: 5px;
     font-size:10px;
-    color:rgba(255, 255, 255, 0.507);
+    bottom: 0%;
+    right: 100%;
+    color:rgba(255, 255, 255, 0);
 }
 .graf-bg-container {
     width: 100%;

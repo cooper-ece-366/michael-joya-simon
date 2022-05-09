@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import './Home.css';
 import '../home/lavatestgif.gif'
 
@@ -18,18 +19,16 @@ class Home extends Component {
                         </div>
                         <div className="home-title3">Flows 
                         </div>
-                        <button className="explore-button">Explore Lava</button>
-                        
+                        <div>&nbsp;<div>&nbsp;&nbsp;</div>&nbsp;</div>
+                        <NavLink className = "explore-button" to= "/about">Explore Lava</NavLink>
                         </div> 
+                        
                         <div className = "home-desc">
                         <p>Find your community <br></br>
                         Found your own</p>
-                        <button className = "check-button">Log In | Sign Up Above</button>
-                        <div className="bottom-text">Image Credit to Dave Whyte </div>
+                        <button className = "check-button">Log In | Sign Up Above</button>                   
                         </div>
-                        
-                            
-                        
+                        <div className="bottom-text">Image Credit to Dave Whyte </div>
                     </div> 
                 </div>
                 <div className="container">
