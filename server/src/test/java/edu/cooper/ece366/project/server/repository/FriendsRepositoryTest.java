@@ -20,24 +20,37 @@ class FriendsRepositoryTest {
     @Autowired
     private FriendsRepository friendsRepository;
 
+    Friends friend = new Friends();
+
     @BeforeAll
     void setup(){
+        friend.setId((long)0);
+        friend.setRequesterID(111);
+        friend.setAddresseeID(222);
+        friend.setStatus(false);
     }
 
     @Test
-    void findByRequesterIDAndStatus() {
-        assertNotNull(friendsRepository.findByRequesterIDAndStatus(0,false));
+    void RequesterStatusCheck() {
+        System.out.println("Checking Friends Get By Requester and Status...");
+        assertNotNull(friendsRepository.findByRequesterIDAndStatus(111,false));
     }
 
     @Test
-    void findByAddresseeIDAndStatus() {
+    void AddresseeStatusCheck() {
+        System.out.println("Checking Friends Get By Addressee and Status...");
+        assertNotNull(friendsRepository.findByAddresseeIDAndStatus(222,false));
     }
 
     @Test
-    void findByRequesterIDAndAddresseeID() {
+    void RequesterAndAddresseeCheck() {
+        System.out.println("Checking Friends Get By Requester and Addressee...");
+        assertNotNull(friendsRepository.findByRequesterIDAndAddresseeID(111,222));
     }
 
     @Test
-    void findByRequesterIDAndStatusOrAddresseeIDAndStatus() {
+    void EitherRequesterOrAddresseeCheck() {
+        System.out.println("Checking Friends Get By Requester and Status or Addressee and Status...");
+        assertNotNull(friendsRepository.findByRequesterIDAndStatusOrAddresseeIDAndStatus(111,false, 222, false));
     }
 }
