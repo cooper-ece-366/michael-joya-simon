@@ -7,12 +7,12 @@
     animation: introfade 1.3s reverse;
 }
 
-@keyframes introfade { 
+@keyframes introfade {
     from {opacity:100%}
     to {opacity:0;}
 }
 
-.desc-back { 
+.desc-back {
     background: #000;
     background-image: url(../home/elevategif.gif);
     background-repeat: no-repeat;
@@ -29,10 +29,10 @@
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
     font-size:80px;
-    margin-top:5%; 
+    margin-top:5%;
     text-align:left;
     margin-left:10%;
-    
+
 }
 .about-titles {
     text-align:left;
@@ -41,7 +41,7 @@
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:57px; 
+    font-size:57px;
     overflow: hidden;
     white-space: nowrap;
     width: 0;
@@ -53,7 +53,7 @@
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:57px; 
+    font-size:57px;
     white-space: nowrap;
     overflow:hidden;
     width: 0;
@@ -65,7 +65,7 @@
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-family:'Poppins-Bold';
-    font-size:57px; 
+    font-size:57px;
     overflow:hidden;
     white-space: nowrap;
     width: 0;
@@ -81,14 +81,14 @@
 }
 
 .slide-up {
-  animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both
+    animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both
 }
-  
+
 @keyframes slide-up {
-  0% {
-    transform: translateY(100px) }
-  100% {
-    transform: translateY(0)}
+    0% {
+        transform: translateY(100px) }
+    100% {
+        transform: translateY(0)}
 }
 .creators {
     display:inline-flex;
@@ -101,40 +101,40 @@
     opacity: 0%;
 }
 
-@keyframes photoslide { 
+@keyframes photoslide {
     0% {opacity:100%;transform:translateX(50px);}
     100% {opacity:100%; transform:translateX(60%);}
     100% {}
 }
 
-.michael{ 
+.michael{
     background-image:url(../home/michael.png);
     width: 200px;
-    height: 200px; 
+    height: 200px;
     border-radius: 50%;
     padding: 5px;
     float:left;
     margin-right: 5%;
 }
 
-.joya{ 
+.joya{
     background-image:url(../home/joya.jpg);
     width: 200px;
-    height: 200px; 
+    height: 200px;
     border-radius: 50%;
     padding: 5px;
 }
 
-.simon{ 
+.simon{
     background-image:url(../home/simon.jpg);
     width: 200px;
-    height: 200px; 
+    height: 200px;
     border-radius: 50%;
     padding: 5px;
     margin-right: 5%;
 }
 
-.legend { 
+.legend {
     text-align:left;
     margin-left:10%;
 }
@@ -157,7 +157,7 @@
 
 @keyframes legend-slide {
     0% {
-        margin-top:-40%; 
+        margin-top:-40%;
         margin-bottom:0;
     }
     100% {
@@ -172,7 +172,7 @@ check-button:hover{
     transform: scale(1.02);
 }
 
-.bottom-text2 { 
+.bottom-text2 {
     position:absolute;
     font-family:Arial, Helvetica, sans-serif;
     bottom: 0%;
@@ -186,16 +186,16 @@ check-button:hover{
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 
 .desc {
-  background: #1c1c1c;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  font-family: 'Spartan', sans-serif;
-  color: #2d2d2d; }
+    background: #1c1c1c;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Spartan', sans-serif;
+    color: #2d2d2d; }
 
 \::selection {
-  background: rgba(170, 170, 170, 0.3); }
+    background: rgba(170, 170, 170, 0.3); }
 
 .heading {
   margin: 10px 0 0 80px;
@@ -206,49 +206,50 @@ check-button:hover{
   white-space: pre-line; }
   .heading > div {
     overflow: hidden; }
-    .heading > div > p {
-      width: max-content;
-      white-space: nowrap;
-      margin: 0;
-      line-height: 150%; }
+.heading > div > p {
+    width: max-content;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 150%; }
 
 .green {
-  color: #32c267;
+    color: #32c267;
     font-size: 60px; }
 
-.span { 
+.span {
     font-size: 25px;
 }
 div.heading > div {
-  animation-delay: 0; }
-  div.heading > div:nth-child(2) > p {
+    animation-delay: 0; }
+div.heading > div:nth-child(2) > p {
     animation-delay: 1.2s; }
 
 div.heading > div {
-  animation-delay: 0; }
-  div.heading > div:nth-child(3) > p {
+    animation-delay: 0; }
+div.heading > div:nth-child(3) > p {
     animation-delay: 2.4s; }
 
 div.heading > div {
-  animation-delay: 0; }
-  div.heading > div:nth-child(4) > p {
+    animation-delay: 0; }
+div.heading > div:nth-child(4) > p {
     animation-delay: 3.6s; }
 
 div.heading > div {
     animation-delay: 0; }
-    div.heading > div:nth-child(5) > p {
-        animation-delay: 5s; }
+div.heading > div:nth-child(5) > p {
+    animation-delay: 5s; }
 
 div.heading > div {
     animation-delay: 0; }
-    div.heading > div:nth-child(6) > p {
-        animation-delay: 5s; }
+div.heading > div:nth-child(6) > p {
+    animation-delay: 5s; }
 
 .slide-up {
-  animation: slide-up 1s cubic-bezier(0.65, 0, 0.35, 1, 0.35, 0.65) both; }
+    animation: slide-up 1s cubic-bezier(0.65, 0, 0.35, 1, 0.35, 0.65) both; }
 
 @keyframes slide-up {
-  0% {
-    transform: translateY(100px); }
-  100% {
-    transform: translateY(0); } }
+    0% {
+        transform: translateY(100px); }
+    100% {
+        transform: translateY(0); } }
+
