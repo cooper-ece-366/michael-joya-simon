@@ -103,7 +103,7 @@
 
 @keyframes photoslide {
     0% {opacity:100%;transform:translateX(50px);}
-    100% {opacity:100%; transform:translateX(850px);}
+    100% {opacity:100%; transform:translateX(60%);}
     100% {}
 }
 
@@ -167,18 +167,7 @@
 }
 
 
-.alt-desc {
-    position: absolute;
-    width: 25%;
-    min-width: 250px;
-    font-family:'Spartan';
-    font-size: 30px;
-    bottom: 10%;
-    right: -10%;
-}
-
-
-check-button:hover{
+check-button:hover{ 
     cursor:pointer;
     transform: scale(1.02);
 }
@@ -186,7 +175,8 @@ check-button:hover{
 .bottom-text2 {
     position:absolute;
     font-family:Arial, Helvetica, sans-serif;
-    bottom: -50px;
+    bottom: 0%;
+    right: 0%;
     padding: 5px;
     font-size:10px;
     color:rgba(255, 255, 255, 0.507);
@@ -208,13 +198,13 @@ check-button:hover{
     background: rgba(170, 170, 170, 0.3); }
 
 .heading {
-    margin: 10px 0 0 80px;
-    font-size: 45px;
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-    white-space: pre-line; }
-.heading > div {
+  margin: 10px 0 0 80px;
+  font-size: 45px;
+  width: max-content;
+  display: flex;
+  flex-direction: column; 
+  white-space: pre-line; }
+  .heading > div {
     overflow: hidden; }
 .heading > div > p {
     width: max-content;

@@ -65,9 +65,9 @@ class About extends Component {
                     </div>
 
                     
-                    <div className = "alt-desc">
+                    
                     <div className="bottom-text2">Image Credit to Dave Whyte </div>
-                    </div>
+                
                 </div> 
             </div>
             <div className="container">
