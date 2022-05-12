@@ -103,11 +103,7 @@
 
 @keyframes photoslide { 
     0% {opacity:100%;transform:translateX(50px);}
-<<<<<<< HEAD
     100% {opacity:100%; transform:translateX(60%);}
-=======
-    100% {opacity:100%; transform:translateX(850px);}
->>>>>>> cf62f4c971e2c13945e1440cf2351479033c519e
     100% {}
 }
 
@@ -179,12 +175,8 @@ check-button:hover{
 .bottom-text2 { 
     position:absolute;
     font-family:Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
     bottom: 0%;
     right: 0%;
-=======
-    bottom: -50px;
->>>>>>> cf62f4c971e2c13945e1440cf2351479033c519e
     padding: 5px;
     font-size:10px;
     color:rgba(255, 255, 255, 0.507);
