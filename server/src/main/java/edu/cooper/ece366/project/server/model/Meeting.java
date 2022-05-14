@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Meetings POJO to be stored in meetings table
+
 package edu.cooper.ece366.project.server.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -5,10 +9,12 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
+//Initialize table
 @Entity
 @Table(name = "meetings")
 public class Meeting {
 
+    //Fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,6 +40,7 @@ public class Meeting {
     public Meeting() {
     }
 
+    //Setters and getters
     public Long getId() {
         return id;
     }

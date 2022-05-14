@@ -1,3 +1,7 @@
+//Joya Debi
+
+//Display each friend as its own card on the friend page
+
 import React from 'react';
 import { API_BASE_URL } from '../constants';
 import './FriendList.css';
@@ -5,6 +9,7 @@ import {postDelete} from '../util/APIUtils.js'
 
 const FriendList=({id, name, skillsList, imageUrl})=>{
     
+    //Remove friend - send api request
     function friendRemove() {
         console.log("test");
         postDelete(id);

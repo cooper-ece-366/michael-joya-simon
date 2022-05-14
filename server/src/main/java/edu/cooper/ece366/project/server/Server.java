@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Main java class that initializes the Spring Boot endpoints
+
 package edu.cooper.ece366.project.server;
 
 import org.springframework.boot.SpringApplication;
@@ -20,6 +24,7 @@ import org.slf4j.LoggerFactory;
 public class Server {
     private static final Logger LOGGER = LoggerFactory.getLogger(Server.class);
 
+    //Start up Spring Boot
     public static void main(String[] args) {
         LOGGER.info("Example log from {}", Server.class.getSimpleName());
         System.out.println("The Server says hello!");

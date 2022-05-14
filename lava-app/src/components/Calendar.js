@@ -1,3 +1,7 @@
+//Michael Bentivegna & Joya Debi
+
+//Calendar page for making, accepting, and removing appointments
+
 import React, { Component,} from 'react';
 import './Calendar.css';
 import Select from 'react-select';
@@ -49,14 +53,17 @@ class CalendarComp extends Component {
         this.closePopupHandler - this.closePopupHandler.bind(this)
     }
 
+    //Toggle pop up on (Michael Bentivegna)
     openPopupHandler = () => {
         this.setState({showPopup: true});
     }
   
+    //Toggle pop up off (Michael Bentivegna)
     closePopupHandler = () => {
         this.setState({showPopup: false});
     }
 
+    //Make these API calls on load in (Michael Bentivegna)
     async componentDidMount(e) {
         await getFriends().then((response) => {
             console.log(this.setState({friends: response}))
@@ -74,9 +81,9 @@ class CalendarComp extends Component {
             console.log(this.setState({meetings: response}))
             })
 
-        
     }
 
+    //Get list of friends for dropdown (Michael Bentivegna)
     getOptions() {
         var options = []
         this.state.friends.forEach(function(element) {
@@ -86,6 +93,7 @@ class CalendarComp extends Component {
         return options
     }
 
+    //Combine the incoming, outgoing, and confirmed meetings into an array for the calendar (Michael Bentivegna)
     getEvents() {
         var events = []
         this.state.outgoingMeetings.forEach(function(element){
@@ -124,6 +132,7 @@ class CalendarComp extends Component {
         return events;
     }
 
+    //Select friend handler (Joya Debi)
     handleFriendChange(selectedOption)
     {
         var requestMeet = {...this.state.requestMeet}
@@ -131,6 +140,7 @@ class CalendarComp extends Component {
         this.setState({requestMeet});
     }
 
+    //Create memo handler (Joya Debi)
     handleMemoChange(event)
     {
         var requestMeet = {...this.state.requestMeet}
@@ -138,6 +148,7 @@ class CalendarComp extends Component {
         this.setState({requestMeet});
     }
 
+    //Start time change with edge case of null handled (Joya Debi)
     handleStartTimeChange(date)
     {
         this.setState(
@@ -153,6 +164,7 @@ class CalendarComp extends Component {
         
     }
 
+    //End time change with edge case of null handled (Joya Debi)
     handleEndTimeChange(date)
     {
         this.setState(
@@ -168,6 +180,7 @@ class CalendarComp extends Component {
         
     }
 
+    //Call popup handler with correct status indicator (Michael Bentivegna)
     test(event) {
         console.log(event)
         this.setState(
@@ -178,6 +191,7 @@ class CalendarComp extends Component {
         this.openPopupHandler()
     }
 
+    //Submit form for new meeting - send api call (Michael Bentivegna)
     async submitForm(){
 
         //Meet add api request goes here
@@ -195,6 +209,7 @@ class CalendarComp extends Component {
         }
     }
 
+    //Wait timer (Michael Bentivegna)
     sleep(duration) {
         return new Promise(resolve => {
             setTimeout(() => {

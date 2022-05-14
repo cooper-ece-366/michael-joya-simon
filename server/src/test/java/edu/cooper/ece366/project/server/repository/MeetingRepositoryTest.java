@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Testing class for the JPA functions in the MeetingRepository that connect with the MySQL database
+
 package edu.cooper.ece366.project.server.repository;
 
 import edu.cooper.ece366.project.server.model.Friends;
@@ -21,6 +25,7 @@ class MeetingRepositoryTest {
 
     Meeting meeting = new Meeting();
 
+    //Create new meeting
     @BeforeAll
     void setup(){
         meeting.setId((long)1);
@@ -29,6 +34,7 @@ class MeetingRepositoryTest {
         meeting.setStatus(false);
     }
 
+    //Ensure that the JPA function finds the meeting and doesn't return null
     @Test
     void CheckRequesterIDAndStatus() {
         System.out.println("Checking Meeting Get By Requester and Status...");

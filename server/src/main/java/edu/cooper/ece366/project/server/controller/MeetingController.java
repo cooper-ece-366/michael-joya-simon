@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//This class controls all the API endpoints needed regarding a users meetings
+
 package edu.cooper.ece366.project.server.controller;
 
 import edu.cooper.ece366.project.server.Server;
@@ -28,6 +32,7 @@ import java.util.Locale;
 @RestController
 public class MeetingController {
 
+    //Import all tables
     @Autowired
     private FriendsRepository friendsRepository;
 
@@ -37,6 +42,7 @@ public class MeetingController {
     @Autowired
     private MeetingRepository meetingRepository;
 
+    //Add meeting and save it with all the data from the post request
     @PostMapping("/meeting/add")
     @PreAuthorize("hasRole('USER')")
     public Meeting addMeeting(@CurrentUser UserPrincipal userPrincipal, @Valid @RequestBody Meeting tmpMeeting) {
@@ -54,6 +60,8 @@ public class MeetingController {
         return addMeet;
     }
 
+    //Accept a meeting invitation with a given meeting id
+    //Note the user ID is not used as there could be multiple meating with the same user
     @GetMapping("/meeting/accept/{id}")
     @PreAuthorize("hasRole('USER')")
     public Meeting acceptMeeting(@PathVariable(name = "id") long id, @CurrentUser UserPrincipal userPrincipal) {
@@ -72,6 +80,7 @@ public class MeetingController {
 
     }
 
+    //Remove meeting from list with given meeting ID
     @GetMapping("/meeting/remove/{id}")
     @PreAuthorize("hasRole('USER')")
     public Meeting removeMeeting(@PathVariable(name = "id") long id, @CurrentUser UserPrincipal userPrincipal) {
@@ -88,6 +97,7 @@ public class MeetingController {
         }
     }
 
+    //Lists all outgoing meetings for the logged in user
     @GetMapping("/meeting/outgoing")
     @PreAuthorize("hasRole('USER')")
     public List<MeetingView> outgoingMeeting(@CurrentUser UserPrincipal userPrincipal) {
@@ -110,6 +120,7 @@ public class MeetingController {
         return requestedMeetingView;
     }
 
+    //Lists all incoming meetings for the logged in user
     @GetMapping("/meeting/incoming")
     @PreAuthorize("hasRole('USER')")
     public List<MeetingView> incomingMeeting(@CurrentUser UserPrincipal userPrincipal) {
@@ -133,7 +144,7 @@ public class MeetingController {
     }
 
 
-    //Get working regardless of requester or addressee
+    //Lists all confirmed friends of the logged in user
     @GetMapping("/meeting/meet")
     @PreAuthorize("hasRole('USER')")
     public List<MeetingView> Meeting(@CurrentUser UserPrincipal userPrincipal) {

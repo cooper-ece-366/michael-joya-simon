@@ -1,3 +1,7 @@
+//Simon Yoon
+
+//Filter tool for users to search for Study Buddies
+
 import React, {Component} from 'react';
 import './FilterTool.css';
 import Select from 'react-select';
@@ -23,6 +27,7 @@ class Filter extends Component {
     }
 
 
+    //Handles text box changes
     handleOnChange(e) {
        this.setState(
             {
@@ -32,6 +37,7 @@ class Filter extends Component {
 
     }
   
+    //On submission update the users that appear in the list - make api get request with parameters
     async handleSubmit(e)
     {
         e.preventDefault()
@@ -49,6 +55,7 @@ class Filter extends Component {
 
     }
 
+    //Update skill set on change and change to string for storage in database
     changeHandlerSkills = (selectedOptions) =>  {
         let result = selectedOptions.map(a => a.label).toString();
         this.setState(
@@ -58,6 +65,7 @@ class Filter extends Component {
         );
     }
 
+    //Add friend - send api request
     friendRequestButton(e) {
           var SendRequestID = e.target.id
           console.log(SendRequestID)

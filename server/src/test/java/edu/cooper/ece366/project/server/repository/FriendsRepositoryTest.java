@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Testing class for the JPA functions that connect with the MySQL database
+
 package edu.cooper.ece366.project.server.repository;
 
 import edu.cooper.ece366.project.server.exception.ResourceNotFoundException;
@@ -22,6 +26,7 @@ class FriendsRepositoryTest {
 
     Friends friend = new Friends();
 
+    //Create new friend before testing
     @BeforeAll
     void setup(){
         friend.setId((long)0);
@@ -30,6 +35,7 @@ class FriendsRepositoryTest {
         friend.setStatus(false);
     }
 
+    //Make sure a null isn't returned since a friend should be found
     @Test
     void RequesterStatusCheck() {
         System.out.println("Checking Friends Get By Requester and Status...");

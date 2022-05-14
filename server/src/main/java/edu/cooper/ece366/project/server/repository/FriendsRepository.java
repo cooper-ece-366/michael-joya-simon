@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Create JPA repository with all necessary functions to communicate with the friends database
+
 package edu.cooper.ece366.project.server.repository;
 
 import edu.cooper.ece366.project.server.model.Friends;

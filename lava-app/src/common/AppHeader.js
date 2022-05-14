@@ -1,3 +1,7 @@
+//Simon Yoon
+
+//Navbar with link to all relevant pages
+
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './AppHeader.css';

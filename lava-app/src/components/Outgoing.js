@@ -1,3 +1,7 @@
+//Joya Debi
+
+//Outgoing friend requests each on their own card for friends page
+
 import React from 'react';
 import './Outgoing.css';
 import friendRemove from './FriendList.js';
@@ -5,6 +9,7 @@ import {postDelete} from '../util/APIUtils.js'
 
 const Outgoing=({id, name, skillsList, imageUrl})=>{
 
+    //Remove friend - send api request
     function friendRemove() {
         console.log("test");
         postDelete(id);

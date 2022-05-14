@@ -1,16 +1,21 @@
+//Joya Debi
+
+//Incoming friend requests each on their own card for friends page
+
 import React from 'react';
 import './Incoming.css';
 import { postAccept, postDelete } from '../util/APIUtils';
 
 const Incoming = ({id, name, skillsList, imageUrl})=>{
 
-
+    //Accept friend - send api request
     function makePost(){
         console.log("test");
         postAccept(id);
         window.location.reload();
     }
 
+    //Decline friend - send api request
     function makePostDecline() {
         console.log("test");
         postDelete(id);

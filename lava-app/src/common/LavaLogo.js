@@ -1,3 +1,7 @@
+//Simon Yoon
+
+//Lava Icon on right of navbar
+
 import React from 'react';
 import './LavaLogo.css';
 
