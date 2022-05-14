@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Testing class for Meetings POJO
+
 package edu.cooper.ece366.project.server.model;
 import org.junit.jupiter.api.Test;
 

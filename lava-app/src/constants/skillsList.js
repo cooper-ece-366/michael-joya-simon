@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Static list of states and skill set options
+
 export const options = [
     { value: 'biology', label: 'Biology' },
     { value: 'chemistry', label: 'Chemistry' },

@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//Allows the user to make changes to their profile and save them
+
 import React, { Component } from 'react';
 import './EditProfile.css';
 import DatePicker from 'react-datepicker';
@@ -31,7 +35,8 @@ class EditProfile extends Component {
             stateLocated: this.props.currentUser.stateLocated,
             career: this.props.currentUser.career,
         }
-
+        
+        //Data type housekeeping
         skillsArray = this.props.currentUser.skillsList.split(",")
         skillsArray.forEach(function(element) {
             skillsDefault.push({label: element, value: element.toLowerCase()})
@@ -80,6 +85,7 @@ class EditProfile extends Component {
         );
     }
 
+    //Update when new state is selected
     changeHandlerState(selectedOption) {
         let result = selectedOption.value;
         this.setState(
@@ -89,6 +95,7 @@ class EditProfile extends Component {
         );
     }
 
+    //Wait timer
     sleep(duration) {
         return new Promise(resolve => {
             setTimeout(() => {
@@ -99,7 +106,6 @@ class EditProfile extends Component {
 
     //Submit button with alert
     async submit() {
-        //Make UPDATE request for Profile here
         const updateProfile = Object.assign({}, this.state);
         console.log(updateCurrentUser(updateProfile))
         Alert.success("You're changes have been saved!");
@@ -107,8 +113,6 @@ class EditProfile extends Component {
         window.location.reload();
     }
 
-    
-    
     render() {
         return (
             <div className = "overall-content">

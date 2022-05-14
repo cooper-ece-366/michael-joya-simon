@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//This class is the users object that was expanded from the initial spring social login code
+
 package edu.cooper.ece366.project.server.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -6,11 +10,14 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
+//Table creation
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email")
 })
+
 public class User {
+    //Column titles
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -51,6 +58,7 @@ public class User {
 
     private String providerId;
 
+    //Setters and getters
     public Long getId() {
         return id;
     }

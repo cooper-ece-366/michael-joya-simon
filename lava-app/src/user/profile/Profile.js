@@ -1,15 +1,21 @@
+//Joya Debi
+
+//Profile Page with link to edit profile
+
 import React, { Component } from 'react';
 import './Profile.css';
 import EditProfile from '../../components/EditProfile';
 import { Link, NavLink } from 'react-router-dom';
 
 class Profile extends Component {
+    //Get current user data
     constructor(props) {
         super(props);
         console.log(props);
         
     }
 
+    //For formatting
     nameArr = this.props.currentUser.skillsList.split(',');
     test = new Date(this.props.currentUser.birthday).toDateString()
 

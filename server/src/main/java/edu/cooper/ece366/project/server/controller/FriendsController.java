@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//This class controls all the API endpoints needed regarding a users friends
+
 package edu.cooper.ece366.project.server.controller;
 
 import edu.cooper.ece366.project.server.Server;
@@ -22,16 +26,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
 @RestController
 public class FriendsController {
 
+    //Get the list of all friends and users
     @Autowired
     private FriendsRepository friendsRepository;
 
     @Autowired
     private UserRepository userRepository;
 
+    //Get a list of instances where the current user is requesting another user to be their friend
     @GetMapping("/friends/requester")
     @PreAuthorize("hasRole('USER')")
     public List<User> getRequester(@CurrentUser UserPrincipal userPrincipal) {
@@ -44,10 +49,10 @@ public class FriendsController {
             requestedUsers.add(userRepository.findById((long)requested.get(i).getAddresseeID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
         }
 
-
         return requestedUsers;
     }
 
+    //Get the list of instances where someone is requesting the current user to be their friend
     @GetMapping("/friends/addressee")
     @PreAuthorize("hasRole('USER')")
     public List<User> getAddressee(@CurrentUser UserPrincipal userPrincipal) {
@@ -60,10 +65,10 @@ public class FriendsController {
             incomingUsers.add(userRepository.findById((long)incoming.get(i).getRequesterID()).orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId())));
         }
 
-
         return incomingUsers;
     }
 
+    //Add friend with provided user ID in the url
     @GetMapping("/friends/add/{num}")
     @PreAuthorize("hasRole('USER')")
     public Friends addFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
@@ -82,13 +87,13 @@ public class FriendsController {
         return newFriend;
     }
 
+    //Get all confirmed friends (a bit tricky since now they can be in either the requester or addressee column, but the status must be 1)
     @GetMapping("/friends/friend")
     @PreAuthorize("hasRole('USER')")
     public List<User> getAllFriends(@CurrentUser UserPrincipal userPrincipal) {
 
         List<Friends> friends = friendsRepository.findByRequesterIDAndStatusOrAddresseeIDAndStatus(((Long)userPrincipal.getId()).intValue(), true, ((Long)userPrincipal.getId()).intValue(), true);
         List<User> userFriends = new ArrayList<>();
-
 
         for (int i = 0; i < friends.size(); i++)
         {
@@ -103,10 +108,10 @@ public class FriendsController {
         return userFriends;
     }
 
+    //Accept friends request from given user ID
     @GetMapping("/friends/accept/{num}")
     @PreAuthorize("hasRole('USER')")
     public Friends acceptFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
-
 
         if(friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0)
         {
@@ -120,10 +125,10 @@ public class FriendsController {
         return blankFriend;
     }
 
+    //Decline friends request from given user ID
     @GetMapping("/friends/decline/{num}")
     @PreAuthorize("hasRole('USER')")
     public Friends declineFriend(@PathVariable(name = "num") int num, @CurrentUser UserPrincipal userPrincipal) {
-
 
         if(friendsRepository.findByRequesterIDAndAddresseeID(num, ((Long)userPrincipal.getId()).intValue()).size() != 0)
         {

@@ -1,3 +1,7 @@
+//Michael Bentivegna
+
+//This class controls all the API endpoints needed regarding a user
+
 package edu.cooper.ece366.project.server.controller;
 
 import edu.cooper.ece366.project.server.Server;
@@ -22,9 +26,11 @@ import java.util.Locale;
 @RestController
 public class UserController {
 
+    //Initialize user list
     @Autowired
     private UserRepository userRepository;
 
+    //Get logged in user
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
     public User getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
@@ -32,6 +38,7 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
 
+    //Update users information
     @PostMapping("/user/update")
     public User updateCurrentUser(@CurrentUser UserPrincipal userPrincipal,
                                   @Valid @RequestBody User inputUser) {
@@ -49,6 +56,7 @@ public class UserController {
         return updateUser;
     }
 
+    //Search for list of users given input parameters of name and skills list
     @PostMapping("/user/list")
     public List<User> filterCurrentUsers(@CurrentUser UserPrincipal userPrincipal,
                                          @Valid @RequestBody User filterUser) {

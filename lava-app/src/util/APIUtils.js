@@ -1,3 +1,7 @@
+//Michael Bentivegna
+//Contains all API endpoints needed for the app
+
+
 import { API_BASE_URL, ACCESS_TOKEN } from '../constants';
 
 const request = (options) => {
@@ -23,6 +27,7 @@ const request = (options) => {
     );
 };
 
+//Get object of logged in user
 export function getCurrentUser() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -34,6 +39,7 @@ export function getCurrentUser() {
     });
 }
 
+//Update data of the logged in user
 export function updateCurrentUser(updateProfile) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -62,6 +68,7 @@ export function signup(signupRequest) {
     });
 }
 
+//Get only the users that satisfy the parameters in the body of the POST request
 export function getFilteredUsers(filterRequest) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -74,6 +81,7 @@ export function getFilteredUsers(filterRequest) {
     });
 }
 
+//Get all friends of the logged in user
 export function getFriends() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -85,6 +93,7 @@ export function getFriends() {
     })
 }
 
+//Get all outgoing friend requests
 export function getFriendRequests() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -96,6 +105,7 @@ export function getFriendRequests() {
     })
 }
 
+//Get all incoming friend requests
 export function getFriendAddressee() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -107,6 +117,7 @@ export function getFriendAddressee() {
     })
 }
 
+//Accept a friend request
 export function postAccept(id) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -118,6 +129,7 @@ export function postAccept(id) {
     })
 }
 
+//Create new friend request
 export function postAdd(id) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -129,6 +141,7 @@ export function postAdd(id) {
     })
 }
 
+//Remove a friend request
 export function postDelete(id) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -140,6 +153,7 @@ export function postDelete(id) {
     })
 }
 
+//Create new meeting for logged in user
 export function addMeeting(data) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -152,6 +166,7 @@ export function addMeeting(data) {
     });
 }
 
+//Get all outgoing meeting invitations
 export function getMeetingOutgoing() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -163,6 +178,7 @@ export function getMeetingOutgoing() {
     })
 }
 
+//Get all incoming meeting invitations
 export function getMeetingIncoming() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -174,6 +190,7 @@ export function getMeetingIncoming() {
     })
 }
 
+//Get all confirmed meetings
 export function getMeetingScheduled() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -185,6 +202,7 @@ export function getMeetingScheduled() {
     })
 }
 
+//Accept an incoming meeting request
 export function acceptMeeting(input) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -196,6 +214,7 @@ export function acceptMeeting(input) {
     })
 }
 
+//Remove a potential meeting
 export function removeMeeting(input) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");

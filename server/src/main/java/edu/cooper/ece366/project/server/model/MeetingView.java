@@ -1,7 +1,9 @@
-package edu.cooper.ece366.project.server.model;
-
+//Michael Bentivegna
 
 //This class is specifically for showcasing meeting data on the frontend
+
+package edu.cooper.ece366.project.server.model;
+
 public class MeetingView {
 
     public MeetingView() {
@@ -25,6 +27,7 @@ public class MeetingView {
     //end time
     private String endTime;
 
+    //Setters and getters
     public Long getId() {
         return id;
     }

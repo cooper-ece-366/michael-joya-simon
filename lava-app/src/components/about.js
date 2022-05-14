@@ -1,3 +1,7 @@
+//Simon Yoon
+
+//About me page showcasing the authors and giving additional info about lava.
+
 import React, { Component,} from 'react';
 import './about.css';
 import michael2 from '../home/michael2.png';
@@ -12,7 +16,7 @@ class About extends Component {
         };
 
     }
-
+    
     render() {
         return (<div className="about">
         <div className="desc">

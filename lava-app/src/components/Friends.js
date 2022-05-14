@@ -1,4 +1,6 @@
-//Joya
+//Joya Debi & Michael Bentivegna
+
+//Overall friends page that will showcase the incoming, outgoing, and confirmed friends
 import React, { Component,} from 'react';
 import './Friends.css';
 import FriendList from './FriendList';
@@ -22,10 +24,12 @@ class Friends extends Component {
     }
 
     
+    //Switch between incoming and outgoing (Joya Debi)
     toggleIsRequests() {
         this.setState({isRequests: !this.state.isRequests});
     }
 
+    //Get friends data on load in (Michael Bentivegna)
     async componentDidMount(e) {
             await getFriends().then((response) => {
                 console.log(this.setState({frienddata: response}))
@@ -41,7 +45,7 @@ class Friends extends Component {
 
     }
 
-    
+    //Styling and positions (Joya Debi)
     render() {
         return (<div className = "list-total" style= {{height:"100vh"}}>
                 <div className="row" style={{height:"100vh"}}>

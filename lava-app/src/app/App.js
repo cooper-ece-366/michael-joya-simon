@@ -1,3 +1,7 @@
+//Michael, Joya, Simon
+
+//Mainly left unchanged from social login with just a few new routes added to it
+
 import React, { Component } from 'react';
 import {
   Route,

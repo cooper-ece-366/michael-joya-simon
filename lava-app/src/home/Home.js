@@ -1,3 +1,7 @@
+//Simon Yoon
+
+//Homepage with link to About Me page
+
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Home.css';
